@@ -449,6 +449,18 @@ textarea{
   padding:7px!important;
 }
 
+.sold-model-label{
+  display:flex!important;
+  align-items:center;
+  gap:5px;
+  margin:0!important;
+  font-size:12px;
+  font-weight:800;
+  color:#b42348;
+  white-space:nowrap;
+}
+.sold-model-label input{width:auto!important;}
+
 .photo-preview{
   width:75px;
   height:75px;
@@ -983,25 +995,6 @@ textarea{
       </div>
 
 
-      <div class="field full">
-
-        <label>
-          Mode de disponibilité
-        </label>
-
-        <select id="stockMode">
-          <option value="manuel">🔴 Épuisé manuel</option>
-          <option value="premier_arrive">🥇 Premier arrivé, premier servi</option>
-        </select>
-
-        <small style="display:block;margin-top:6px;color:#92717f">
-          En mode premier arrivé, le premier client qui commande fait passer automatiquement l'article en épuisé.
-          En mode manuel, c'est toi qui contrôles le bouton Épuisé.
-        </small>
-
-      </div>
-
-
       <div
         id="caseFields"
         class="full"
@@ -1066,6 +1059,11 @@ textarea{
           placeholder="Stock"
           style="margin-top:10px"
         >
+
+        <label id="customSoldWrap" class="hidden" style="margin-top:10px">
+          <input id="customSold" type="checkbox" style="width:auto">
+          🔴 Ce modèle est épuisé
+        </label>
 
       </div>
 
@@ -1906,7 +1904,13 @@ phones.map(phone => `
       type="number"
       min="0"
       value="0"
+      title="Stock disponible"
     >
+
+    <span class="sold-model-label">
+      <input class="sold-model-input" type="checkbox">
+      Épuisé
+    </span>
 
   </label>
 
@@ -1973,6 +1977,13 @@ document
 
 
       $('customStock')
+        .classList
+        .toggle(
+          'hidden',
+          !other
+        );
+
+      $('customSoldWrap')
         .classList
         .toggle(
           'hidden',
@@ -2068,6 +2079,30 @@ function getStock(){
 
   return result;
 
+}
+
+
+function getSoldModels(){
+
+  const result = {};
+
+  if($('category').value !== 'cases') return result;
+
+  const type = document.querySelector('input[name=phoneType]:checked').value;
+
+  if(type === 'other'){
+    const model = $('customModel').value.trim();
+    if(model && $('customSold').checked) result[model] = true;
+    return result;
+  }
+
+  document.querySelectorAll('.phone-row').forEach(row => {
+    const checkbox = row.querySelector('input[type=checkbox]:not(.sold-model-input)');
+    const sold = row.querySelector('.sold-model-input');
+    if(checkbox?.checked && sold?.checked) result[checkbox.value] = true;
+  });
+
+  return result;
 }
 
 
@@ -2256,12 +2291,15 @@ async function saveProduct(){
   const stock =
     getStock();
 
+  const soldModels =
+    getSoldModels();
+
 
   const modelKeys =
     Object.keys(stock);
 
 
-  const urls =
+  let urls =
     photoData.length
       ? photoData
       : $('img')
@@ -2269,6 +2307,13 @@ async function saveProduct(){
         .split(',')
         .map(x => x.trim())
         .filter(Boolean);
+
+  // En modification, si aucune nouvelle photo n'est choisie,
+  // on garde automatiquement les photos déjà enregistrées.
+  if(editingProductId && !urls.length){
+    const oldProduct = products.find(p => String(p.id) === String(editingProductId));
+    urls = images(oldProduct?.image_url);
+  }
 
 
   if(!name){
@@ -2338,10 +2383,12 @@ async function saveProduct(){
 
     stock:stock,
 
-    categorie:category,
+    epuise_modeles:
+      category === 'cases'
+        ? soldModels
+        : {},
 
-    mode_stock:
-      $('stockMode').value || 'manuel',
+    categorie:category,
 
     disponible:
       Object.values(stock)
@@ -2442,7 +2489,7 @@ async function loadProducts(){
     .order(
       'created_at',
       {
-        ascending:true
+        ascending:false
       }
     );
 
@@ -2497,11 +2544,13 @@ function renderProducts(){
         product.stock || {};
 
 
+      const soldModels =
+        product.epuise_modeles || {};
+
       const stockText =
         Object.entries(stock)
-        .map(
-          ([model,count]) =>
-          `${esc(model)} : ${esc(count)}`
+        .map(([model,count]) =>
+          `${esc(model)} : ${esc(count)}${soldModels[model] === true ? ' — 🔴 ÉPUISÉ' : ''}`
         )
         .join(' • ');
 
@@ -2544,9 +2593,8 @@ function renderProducts(){
 
           </span>
 
-          ${product.epuise ? '<span class="badge" style="background:#222;color:#fff">ÉPUISÉ</span>' : ''}
+          ${product.categorie !== 'cases' && product.epuise ? '<span class="badge" style="background:#222;color:#fff">ÉPUISÉ</span>' : ''}
 
-          ${product.mode_stock === 'premier_arrive' ? '<span class="badge" style="background:#fff3cd;color:#8a6500">🥇 PREMIER ARRIVÉ</span>' : '<span class="badge" style="background:#f2f2f2;color:#666">🔧 MANUEL</span>'}
 
           <br>
 
@@ -2568,12 +2616,13 @@ function renderProducts(){
             Modifier
           </button>
 
+          ${product.categorie !== 'cases' ? `
           <button
             class="${product.epuise ? 'success-btn' : 'danger'}"
             onclick="toggleEpuisement('${esc(product.id)}', ${product.epuise ? 'false' : 'true'})"
           >
             ${product.epuise ? '🟢 Disponible' : '🔴 Épuisé'}
-          </button>
+          </button>` : ''}
 
           <button
             class="danger"
@@ -2637,14 +2686,18 @@ function editProduct(id){
       product.image_url
     ).join(',');
 
+  photoData = [];
+  $('photo').value = '';
+  $('previews').innerHTML =
+    images(product.image_url).map(url =>
+      `<img class="photo-preview" src="${esc(url)}" title="Photo actuelle (elle sera conservée)">`
+    ).join('');
+
 
   $('category')
     .dispatchEvent(
       new Event('change')
     );
-
-  $('stockMode').value =
-    product.mode_stock || 'manuel';
 
 
   const stock =
@@ -2679,6 +2732,14 @@ function editProduct(id){
       stock[
         checkbox.value
       ] || 0;
+
+    const soldInput =
+      row.querySelector('.sold-model-input');
+
+    if(soldInput){
+      soldInput.checked =
+        product.epuise_modeles?.[checkbox.value] === true;
+    }
 
   });
 
@@ -2792,8 +2853,6 @@ function resetProductForm(){
 
   $('price').value = '';
 
-  $('stockMode').value = 'manuel';
-
   $('img').value = '';
 
   $('photo').value = '';
@@ -2819,6 +2878,12 @@ function resetProductForm(){
   .forEach(
     x => x.value = 0
   );
+
+  document
+  .querySelectorAll('.sold-model-input')
+  .forEach(x => x.checked = false);
+
+  $('customSold').checked = false;
 
 
   $('productFormTitle')
@@ -3110,17 +3175,6 @@ function renderOrders(){
       const productImage =
         productImages[0] || '';
 
-      const priorityIndex =
-        orders.filter(o =>
-          String(o.coque_id) === String(order.coque_id) &&
-          new Date(o.created_at || 0).getTime() <= new Date(order.created_at || 0).getTime()
-        ).length;
-
-      const priorityBadge =
-        priorityIndex > 0
-          ? `<span style="display:inline-block;margin-left:8px;padding:5px 9px;border-radius:999px;background:#fff0f6;color:#d94f8b;font-size:11px;font-weight:900">🥇 Arrivée #${priorityIndex}</span>`
-          : '';
-
 
       const productName =
         product?.nom ||
@@ -3209,7 +3263,6 @@ function renderOrders(){
             <div class="order-number">
 
               🛍️ Commande #${esc(order.id)}
-              ${priorityBadge}
 
             </div>
 
@@ -3966,29 +4019,27 @@ async function saveManualOrder(){
 
   if(result.error){
 
-    showManualMessage(
-      '❌ ' + result.error.message,
-      true
-    );
+    if(result.error.code === '23505'){
+      showManualMessage(
+        '❌ Article déjà commandé : il est maintenant ÉPUISÉ.',
+        true
+      );
+      await loadProducts();
+      renderManualProducts();
+    }else{
+      showManualMessage(
+        '❌ ' + result.error.message,
+        true
+      );
+    }
 
     return;
 
   }
 
 
-  /* Premier arrivé, premier servi :
-     le premier achat rend automatiquement l'article épuisé. */
-  if(selectedManualProduct.mode_stock === 'premier_arrive'){
-    await db
-      .from('coques')
-      .update({epuise:true})
-      .eq('id', selectedManualProduct.id);
-  }
-
   showManualMessage(
-    selectedManualProduct.mode_stock === 'premier_arrive'
-      ? '✅ Commande ajoutée ! 🥇 Premier arrivé, premier servi : article maintenant ÉPUISÉ.'
-      : '✅ Commande ajoutée avec succès !',
+    '✅ Commande ajoutée avec succès ! Article marqué ÉPUISÉ.',
     false
   );
 
