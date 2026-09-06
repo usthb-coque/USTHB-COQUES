@@ -2261,14 +2261,37 @@ async function saveProduct(){
     Object.keys(stock);
 
 
+  /*
+    PHOTO :
+    - nouvelle photo sélectionnée -> elle remplace l'ancienne
+    - aucune nouvelle photo en modification -> on conserve l'ancienne
+    - nouveau produit -> photo obligatoire
+  */
+  const existingProduct =
+    editingProductId
+      ? products.find(
+          p => String(p.id) === String(editingProductId)
+        )
+      : null;
+
+  const oldUrls =
+    existingProduct
+      ? images(existingProduct.image_url)
+      : [];
+
+  const typedUrls =
+    $('img')
+      .value
+      .split(',')
+      .map(x => x.trim())
+      .filter(Boolean);
+
   const urls =
     photoData.length
       ? photoData
-      : $('img')
-        .value
-        .split(',')
-        .map(x => x.trim())
-        .filter(Boolean);
+      : editingProductId
+        ? (typedUrls.length ? typedUrls : oldUrls)
+        : typedUrls;
 
 
   if(!name){
@@ -2295,7 +2318,10 @@ async function saveProduct(){
   }
 
 
-  if(!urls.length){
+  /* Photo obligatoire seulement lors de l'ajout.
+     En modification, l'ancienne photo est conservée
+     automatiquement si aucune nouvelle photo n'est choisie. */
+  if(!editingProductId && !urls.length){
 
     showProductMessage(
       '❌ Ajoute une photo.',
@@ -2618,6 +2644,21 @@ function editProduct(id){
   $('productFormTitle')
     .textContent =
     '✏️ Modifier le produit';
+
+  /* Afficher la photo actuelle : elle sera conservée
+     tant qu'aucune nouvelle photo n'est sélectionnée. */
+  const currentImages = images(product.image_url);
+
+  $('previews').innerHTML = currentImages.length
+    ? `
+      <div style="margin-top:10px;margin-bottom:8px;color:#92717f;font-size:13px;font-weight:700">
+        📷 Photo(s) actuelle(s) — conservée(s) si tu ne choisis pas de nouvelle photo.
+      </div>
+      ${currentImages.map(url => `
+        <img class="photo-preview" src="${esc(url)}" alt="Photo actuelle">
+      `).join('')}
+    `
+    : '';
 
 
   $('name').value =
