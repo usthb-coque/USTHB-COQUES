@@ -1,19 +1,12 @@
+```html
 <!doctype html>
 <html lang="fr">
-
 <head>
-
 <meta charset="utf-8">
-
-<meta
- name="viewport"
- content="width=device-width,initial-scale=1"
->
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>USTHB CASES</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root{
@@ -28,13 +21,9 @@
  --shadow:0 18px 55px rgba(91,44,65,.10);
 }
 
-*{
- box-sizing:border-box
-}
+*{box-sizing:border-box}
 
-html{
- scroll-behavior:smooth
-}
+html{scroll-behavior:smooth}
 
 body{
  margin:0;
@@ -46,13 +35,8 @@ body{
  var(--cream)
 }
 
-button,input,select,textarea{
- font:inherit
-}
-
-button{
- cursor:pointer
-}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
 
 header{
  position:sticky;
@@ -82,9 +66,7 @@ header{
  text-decoration:none
 }
 
-.brand span{
- color:var(--rose)
-}
+.brand span{color:var(--rose)}
 
 .admin{
  justify-self:start;
@@ -301,7 +283,6 @@ header{
 .search{
  display:block;
  width:100%;
- margin:0;
  padding:16px 20px 16px 48px;
  border:1px solid #edd5df;
  border-radius:18px;
@@ -313,9 +294,7 @@ header{
 
 .search:focus{
  border-color:var(--rose2);
- box-shadow:
- 0 0 0 5px #f9c7d933,
- 0 15px 35px #7a40551a
+ box-shadow:0 0 0 5px #f9c7d933,0 15px 35px #7a40551a
 }
 
 .searchWrap:before{
@@ -331,7 +310,7 @@ header{
 .sectionHead{
  max-width:1320px;
  margin:0 auto;
- padding:15px 22px 15px;
+ padding:15px 22px;
  display:flex;
  justify-content:space-between;
  align-items:end
@@ -382,15 +361,12 @@ header{
  transition:transform .45s
 }
 
-.card:hover img{
- transform:scale(1.035)
-}
+.card:hover img{transform:scale(1.035)}
 
 .card h3{
  font-size:16px;
  margin:13px 5px 4px;
- font-weight:800;
- letter-spacing:-.2px
+ font-weight:800
 }
 
 .price{
@@ -483,14 +459,8 @@ header{
 }
 
 @keyframes up{
- from{
-  transform:translateY(15px) scale(.98);
-  opacity:.5
- }
- to{
-  transform:none;
-  opacity:1
- }
+ from{transform:translateY(15px) scale(.98);opacity:.5}
+ to{transform:none;opacity:1}
 }
 
 .close{
@@ -530,9 +500,7 @@ header{
  border:2px solid transparent
 }
 
-.gallery img:hover{
- border-color:var(--rose)
-}
+.gallery img:hover{border-color:var(--rose)}
 
 .models{
  display:flex;
@@ -546,12 +514,7 @@ header{
  color:#714c5e;
  padding:10px 13px;
  border-radius:12px;
- font-weight:800;
- transition:.2s
-}
-
-.model:hover{
- transform:translateY(-1px)
+ font-weight:800
 }
 
 .model.selected{
@@ -559,11 +522,6 @@ header{
  color:#fff;
  border-color:var(--rose);
  box-shadow:0 8px 18px #d84f8b33
-}
-
-.model.disabled{
- opacity:.4;
- text-decoration:line-through
 }
 
 .btn{
@@ -579,9 +537,7 @@ header{
  transition:.25s
 }
 
-.btn:hover{
- transform:translateY(-2px)
-}
+.btn:hover{transform:translateY(-2px)}
 
 .btn:disabled{
  opacity:.45;
@@ -606,17 +562,13 @@ header{
  margin:6px 0;
  border:1px solid #ebcfda;
  border-radius:13px;
- background:white;
+ background:#fff;
  outline:none
 }
 
-.field:focus{
- border-color:var(--rose2)
-}
+.field:focus{border-color:var(--rose2)}
 
-.hidden{
- display:none!important
-}
+.hidden{display:none!important}
 
 .summary{
  background:#fff;
@@ -642,18 +594,12 @@ header{
  border:1px solid #ebd2dc;
  padding:12px;
  border-radius:13px;
- background:white;
- transition:.2s
+ background:#fff
 }
 
 .ship:has(input:checked){
  border-color:var(--rose);
- background:#fff0f6;
- box-shadow:0 7px 18px #d84f8b18
-}
-
-.ship input{
- margin-right:7px
+ background:#fff0f6
 }
 
 .cartItem{
@@ -721,177 +667,55 @@ footer{
 }
 
 @media(max-width:1050px){
-
- .grid{
-  grid-template-columns:repeat(4,1fr)
- }
-
- .hero{
-  grid-template-columns:1fr 1fr
- }
-
+ .grid{grid-template-columns:repeat(4,1fr)}
+ .hero{grid-template-columns:1fr 1fr}
 }
 
 @media(max-width:800px){
-
- .grid{
-  grid-template-columns:repeat(3,1fr)
- }
-
- .hero{
-  grid-template-columns:1fr;
-  padding-top:35px
- }
-
- .heroVisual{
-  min-height:310px
- }
-
- .heroCard{
-  width:200px;
-  height:255px
- }
-
+ .grid{grid-template-columns:repeat(3,1fr)}
+ .hero{grid-template-columns:1fr;padding-top:35px}
+ .heroVisual{min-height:310px}
+ .heroCard{width:200px;height:255px}
 }
 
 @media(max-width:600px){
-
- .head{
-  height:66px;
-  padding:0 13px
- }
-
- .brand{
-  font-size:22px
- }
-
- .admin{
-  width:38px;
-  height:38px
- }
-
- .cartBtn{
-  padding:9px 12px;
-  font-size:12px
- }
-
- .cats{
-  justify-content:flex-start;
-  padding:0 13px 11px
- }
-
- .hero{
-  padding:28px 16px 18px
- }
-
- .hero h1{
-  font-size:49px
- }
-
- .hero p{
-  font-size:15px
- }
-
- .heroVisual{
-  min-height:275px;
-  border-radius:28px
- }
-
- .heroCard{
-  width:175px;
-  height:225px
- }
-
- .searchWrap{
-  padding:0 13px
- }
-
- .sectionHead{
-  padding:8px 13px
- }
-
- .sectionHead h2{
-  font-size:25px
- }
-
- .grid{
-  grid-template-columns:repeat(2,1fr);
-  padding:5px 11px 45px;
-  gap:11px
- }
-
- .card{
-  border-radius:19px;
-  padding:7px
- }
-
- .card img{
-  border-radius:14px
- }
-
- .card h3{
-  font-size:14px;
-  margin-top:10px
- }
-
- .quick{
-  opacity:1;
-  transform:none;
-  width:34px;
-  height:34px;
-  right:13px;
-  bottom:78px
- }
-
- .shipGrid{
-  grid-template-columns:1fr
- }
-
- .box{
-  border-radius:25px;
-  padding:19px
- }
-
- .heroImg{
-  height:260px
- }
-
- .cartItem{
-  grid-template-columns:58px 1fr auto
- }
-
- .cartItem img{
-  width:58px;
-  height:58px
- }
-
+ .head{height:66px;padding:0 13px}
+ .brand{font-size:22px}
+ .admin{width:38px;height:38px}
+ .cartBtn{padding:9px 12px;font-size:12px}
+ .cats{justify-content:flex-start;padding:0 13px 11px}
+ .hero{padding:28px 16px 18px}
+ .hero h1{font-size:49px}
+ .hero p{font-size:15px}
+ .heroVisual{min-height:275px;border-radius:28px}
+ .heroCard{width:175px;height:225px}
+ .searchWrap{padding:0 13px}
+ .sectionHead{padding:8px 13px}
+ .sectionHead h2{font-size:25px}
+ .grid{grid-template-columns:repeat(2,1fr);padding:5px 11px 45px;gap:11px}
+ .card{border-radius:19px;padding:7px}
+ .card img{border-radius:14px}
+ .card h3{font-size:14px;margin-top:10px}
+ .quick{opacity:1;transform:none;width:34px;height:34px;right:13px;bottom:78px}
+ .shipGrid{grid-template-columns:1fr}
+ .box{border-radius:25px;padding:19px}
+ .heroImg{height:260px}
+ .cartItem{grid-template-columns:58px 1fr auto}
+ .cartItem img{width:58px;height:58px}
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="head">
 
-<a
- class="admin"
- href="admin.html"
- title="Admin"
->
-👩‍💼
-</a>
+<a class="admin" href="admin.html" title="Admin">👩‍💼</a>
 
-<div class="brand">
-USTHB CASES
-</div>
+<div class="brand">USTHB CASES</div>
 
-<button
- class="cartBtn"
- onclick="openCart()"
->
+<button class="cartBtn" onclick="openCart()">
 🛒 Panier
 <span id="cartCount" class="count">0</span>
 </button>
@@ -900,38 +724,13 @@ USTHB CASES
 
 <nav class="cats">
 
-<button
- class="cat active"
- data-cat="cases"
->
-CASES
-</button>
-
-<button
- class="cat"
- data-cat="accessoires"
->
-ACCESSOIRES
-</button>
-
-<button
- class="cat"
- data-cat="ventouses"
->
-VENTOUSES
-</button>
-
-<button
- class="cat"
- data-cat="ipad"
->
-IPAD
-</button>
+<button class="cat active" data-cat="cases">CASES</button>
+<button class="cat" data-cat="accessoires">ACCESSOIRES</button>
+<button class="cat" data-cat="ventouses">VENTOUSES</button>
+<button class="cat" data-cat="ipad">IPAD</button>
 
 </nav>
-
 </header>
-
 
 <section class="hero">
 
@@ -950,29 +749,18 @@ Your phone.<br>
 Des coques et accessoires sélectionnés pour donner à ton téléphone une vraie personnalité.
 </p>
 
-<button
- class="heroCta"
- onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})"
->
+<button class="heroCta"
+onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
 Découvrir la collection
 <span>↓</span>
 </button>
 
 </div>
 
-
 <div class="heroVisual">
 
 <div class="heroCard">
-
-<img
- id="heroProductImg"
- src=""
- alt="USTHB Cases"
- loading="eager"
- decoding="async"
->
-
+<img id="heroProductImg" src="" alt="USTHB Cases">
 </div>
 
 <div class="heroTag">
@@ -982,7 +770,6 @@ New collection · USTHB
 </div>
 
 </section>
-
 
 <div class="searchWrap">
 
@@ -995,127 +782,71 @@ New collection · USTHB
 
 </div>
 
-
 <div class="sectionHead">
-
-<h2>
-La collection
-</h2>
-
+<h2>La collection</h2>
 <span id="resultCount"></span>
-
 </div>
 
-
-<main
- id="products"
- class="grid"
->
-<div class="empty">
-Chargement…
-</div>
+<main id="products" class="grid">
+<div class="empty">Chargement…</div>
 </main>
 
-
 <footer>
-USTHB CASES · Made with love in Algeria ·
-<span class="pink">♡</span>
+USTHB CASES · Made with love in Algeria · ♡
 </footer>
 
 
-<div
- id="details"
- class="modal"
->
+<!-- DETAILS -->
+
+<div id="details" class="modal">
 
 <div class="box">
 
-<button
- class="close"
- onclick="closeModal('details')"
->
-×
-</button>
+<button class="close" onclick="closeModal('details')">×</button>
 
 <div id="detailContent"></div>
 
 </div>
-
 </div>
 
 
-<div
- id="cart"
- class="modal"
->
+<!-- CART -->
+
+<div id="cart" class="modal">
 
 <div class="box">
 
-<button
- class="close"
- onclick="closeModal('cart')"
->
-×
-</button>
+<button class="close" onclick="closeModal('cart')">×</button>
 
 <h2>🛒 Mon panier</h2>
 
 <div id="cartList"></div>
-
 <div id="cartSummary"></div>
 
-<button
- class="btn"
- id="checkoutBtn"
- onclick="openCheckout()"
->
+<button class="btn" id="checkoutBtn" onclick="openCheckout()">
 Valider le panier
 </button>
 
 </div>
-
 </div>
 
 
-<div
- id="checkout"
- class="modal"
->
+<!-- CHECKOUT -->
+
+<div id="checkout" class="modal">
 
 <div class="box">
 
-<button
- class="close"
- onclick="closeModal('checkout')"
->
-×
-</button>
+<button class="close" onclick="closeModal('checkout')">×</button>
 
-<h2>
-✨ Finaliser ma commande
-</h2>
+<h2>✨ Finaliser ma commande</h2>
 
-<div
- id="checkoutItems"
- class="summary"
-></div>
-
+<div id="checkoutItems" class="summary"></div>
 
 <form id="checkoutForm">
 
-<input
- id="nom"
- class="field"
- placeholder="Nom"
- required
->
-
-<input
- id="prenom"
- class="field"
- placeholder="Prénom"
- required
->
+<input id="nom" class="field" placeholder="Nom" required>
+<input id="prenom" class="field" placeholder="Prénom" required>
 
 <input
  id="phone"
@@ -1126,67 +857,30 @@ Valider le panier
  required
 >
 
-<select
- id="wilaya"
- class="field"
- required
->
-
-<option value="">
-Choisir la wilaya
-</option>
-
+<select id="wilaya" class="field" required>
+<option value="">Choisir la wilaya</option>
 </select>
 
-
-<h3>
-📦 Livraison
-</h3>
-
+<h3>📦 Livraison</h3>
 
 <div class="shipGrid">
 
 <label class="ship">
-
-<input
- type="radio"
- name="delivery"
- value="Domicile"
- required
->
-
+<input type="radio" name="delivery" value="Domicile" required>
 Domicile
-
 </label>
 
-
 <label class="ship">
-
-<input
- type="radio"
- name="delivery"
- value="Bureau"
->
-
+<input type="radio" name="delivery" value="Bureau">
 Bureau (Anderson / Stop Desk)
-
 </label>
 
-
 <label class="ship">
-
-<input
- type="radio"
- name="delivery"
- value="USTHB"
->
-
+<input type="radio" name="delivery" value="USTHB">
 USTHB
-
 </label>
 
 </div>
-
 
 <textarea
  id="address"
@@ -1194,27 +888,17 @@ USTHB
  placeholder="Adresse complète"
 ></textarea>
 
+<div id="checkoutTotal" class="summary"></div>
 
-<div
- id="checkoutTotal"
- class="summary"
-></div>
-
-
-<button
- class="btn"
- type="submit"
->
+<button class="btn" type="submit">
 💗 Confirmer ma commande
 </button>
-
 
 <div id="orderMsg"></div>
 
 </form>
 
 </div>
-
 </div>
 
 
@@ -1222,11 +906,26 @@ USTHB
 
 <script>
 
+/* =========================================
+   NOUVEAU PROJET SUPABASE
+========================================= */
+
+const SUPABASE_URL =
+ 'https://uukyhedqgzggkpbsooby.supabase.co';
+
+const SUPABASE_KEY =
+ 'sb_publishable_nWuy8_mRLoX41Mn7FrRC9g_baSwOBeh';
+
 const db =
  supabase.createClient(
-  'https://sydurxdeqjgyuzvotmth.supabase.co',
-  'sb_publishable_YtZkRYlml5U_6OtOKcnnyQ_smF0CELK'
+  SUPABASE_URL,
+  SUPABASE_KEY
  );
+
+
+/* =========================================
+   HELPERS
+========================================= */
 
 const $ =
  id => document.getElementById(id);
@@ -1257,111 +956,55 @@ const split =
    .filter(Boolean);
 
 
-/* =========================
+/* =========================================
    WILAYAS
-========================= */
+========================================= */
 
 const wilayas = [
- 'Adrar',
- 'Chlef',
- 'Laghouat',
- 'Oum El Bouaghi',
- 'Batna',
- 'Béjaïa',
- 'Biskra',
- 'Béchar',
- 'Blida',
- 'Bouira',
- 'Tamanrasset',
- 'Tébessa',
- 'Tlemcen',
- 'Tiaret',
- 'Tizi Ouzou',
- 'Alger',
- 'Djelfa',
- 'Jijel',
- 'Sétif',
- 'Saïda',
- 'Skikda',
- 'Sidi Bel Abbès',
- 'Annaba',
- 'Guelma',
- 'Constantine',
- 'Médéa',
- 'Mostaganem',
- 'M’Sila',
- 'Mascara',
- 'Ouargla',
- 'Oran',
- 'El Bayadh',
- 'Illizi',
- 'Bordj Badji Mokhtar',
- 'Boumerdès',
- 'El Tarf',
- 'Tindouf',
- 'Tissemsilt',
- 'El Oued',
- 'Khenchela',
- 'Souk Ahras',
- 'Tipaza',
- 'Mila',
- 'Aïn Defla',
- 'Naâma',
- 'Aïn Témouchent',
- 'Ghardaïa',
- 'Relizane',
- 'Timimoun',
- 'Ouled Djellal',
- 'Béni Abbès',
- 'In Salah',
- 'In Guezzam',
- 'Touggourt',
- 'Djanet',
- 'El M’Ghair',
- 'El Meniaa'
+'Adrar','Chlef','Laghouat','Oum El Bouaghi','Batna','Béjaïa',
+'Biskra','Béchar','Blida','Bouira','Tamanrasset','Tébessa',
+'Tlemcen','Tiaret','Tizi Ouzou','Alger','Djelfa','Jijel','Sétif',
+'Saïda','Skikda','Sidi Bel Abbès','Annaba','Guelma','Constantine',
+'Médéa','Mostaganem','M’Sila','Mascara','Ouargla','Oran',
+'El Bayadh','Illizi','Bordj Badji Mokhtar','Boumerdès','El Tarf',
+'Tindouf','Tissemsilt','El Oued','Khenchela','Souk Ahras',
+'Tipaza','Mila','Aïn Defla','Naâma','Aïn Témouchent','Ghardaïa',
+'Relizane','Timimoun','Ouled Djellal','Béni Abbès','In Salah',
+'In Guezzam','Touggourt','Djanet','El M’Ghair','El Meniaa'
 ];
 
 const domicile = [
- 1200,750,800,750,750,750,800,1200,650,750,
- 1900,800,750,750,750,500,800,750,750,800,
- 750,750,750,750,750,750,750,750,750,850,
- 750,850,2000,750,750,750,1600,750,850,750,
- 750,650,750,750,850,750,850,750,1450,2000,
- 850,1300,1800,2000,850,2000,850,950
+1200,750,800,750,750,750,800,1200,650,750,
+1900,800,750,750,750,500,800,750,750,800,
+750,750,750,750,750,750,750,750,750,850,
+750,850,2000,750,750,750,1600,750,850,750,
+750,650,750,750,850,750,850,750,1450,2000,
+850,1300,1800,2000,850,2000,850,950
 ];
 
 const bureau = [
- 800,450,500,450,450,450,500,800,450,450,
- 1300,500,500,450,450,350,450,450,450,450,
- 450,450,450,450,450,450,450,450,500,600,
- 450,450,1300,450,450,500,1000,500,500,450,
- 550,500,450,450,600,500,600,500,1000,1300,
- 500,900,1100,1300,600,1300,500,600
+800,450,500,450,450,450,500,800,450,450,
+1300,500,500,450,450,350,450,450,450,450,
+450,450,450,450,450,450,450,450,500,600,
+450,450,1300,450,450,500,1000,500,500,450,
+550,500,450,450,600,500,600,500,1000,1300,
+500,900,1100,1300,600,1300,500,600
 ];
 
-
-wilayas.forEach(
- (w,i) => {
-
-  $('wilaya').insertAdjacentHTML(
-   'beforeend',
-   `
-   <option value="${i}">
-    ${esc(w)}
-   </option>
-   `
-  );
-
- }
-);
+wilayas.forEach((w,i)=>{
+ $('wilaya').insertAdjacentHTML(
+  'beforeend',
+  `<option value="${i}">${esc(w)}</option>`
+ );
+});
 
 
-/* =========================
-   CACHE PRODUITS
-========================= */
+/* =========================================
+   CACHE
+========================================= */
 
 const PUBLIC_CACHE_KEY =
- 'usthb_public_products_v3';
+ 'usthb_public_products_new_v1';
 
 const PUBLIC_CACHE_TTL =
  5 * 60 * 1000;
@@ -1375,30 +1018,21 @@ function getPublicCache(){
     PUBLIC_CACHE_KEY
    );
 
-  if(!raw)
-   return null;
+  if(!raw) return null;
 
-  const data =
-   JSON.parse(raw);
+  const data = JSON.parse(raw);
 
   if(
    !data.timestamp ||
    Date.now() - data.timestamp >
    PUBLIC_CACHE_TTL
-  ){
-
-   return null;
-
-  }
+  ) return null;
 
   return data.products || [];
 
  }catch{
-
   return null;
-
  }
-
 }
 
 function setPublicCache(products){
@@ -1420,26 +1054,21 @@ function setPublicCache(products){
 function clearPublicCache(){
 
  try{
-
   localStorage.removeItem(
    PUBLIC_CACHE_KEY
   );
-
  }catch{}
 
 }
 
 
-/* =========================
+/* =========================================
    VARIABLES
-========================= */
+========================================= */
 
 let all = [];
-
 let activeCat = 'cases';
-
 let current = null;
-
 let selectedModel = null;
 
 let cart =
@@ -1450,9 +1079,9 @@ let cart =
  );
 
 
-/* =========================
+/* =========================================
    CATEGORY
-========================= */
+========================================= */
 
 function category(p){
 
@@ -1467,20 +1096,19 @@ function category(p){
 }
 
 
-/* =========================
+/* =========================================
    CART
-========================= */
+========================================= */
 
 function updateCartCount(){
 
  $('cartCount').textContent =
   cart.reduce(
-   (n,x) => n + x.qty,
+   (n,x)=>n+x.qty,
    0
   );
 
 }
-
 
 function saveCart(){
 
@@ -1494,16 +1122,11 @@ function saveCart(){
 }
 
 
-/* =========================
+/* =========================================
    LOAD PRODUCTS
-========================= */
+========================================= */
 
 async function load(){
-
- /*
-   Première priorité :
-   utiliser le cache local pendant 5 minutes.
- */
 
  const cached =
   getPublicCache();
@@ -1512,25 +1135,18 @@ async function load(){
 
   all =
    cached.map(
-    p => ({
+    p=>({
      ...p,
      epuise:p.epuise === true
     })
    );
 
   render();
-
   setHeroImage();
 
   return;
-
  }
 
-
- /*
-   IMPORTANT :
-   Plus de select('*').
- */
 
  const r =
   await db
@@ -1543,21 +1159,28 @@ async function load(){
     {ascending:false}
    );
 
+
  if(r.error){
 
   $('products').innerHTML =
-   '<div class="empty">❌ ' +
-   esc(r.error.message) +
-   '</div>';
+   `
+   <div class="empty">
+   ❌ Impossible de charger les produits.
+   <br><br>
+   ${esc(r.error.message)}
+   </div>
+   `;
+
+  console.error(r.error);
 
   return;
-
  }
+
 
  all =
   (r.data || [])
    .map(
-    p => ({
+    p=>({
      ...p,
      epuise:p.epuise === true
     })
@@ -1566,7 +1189,6 @@ async function load(){
  setPublicCache(all);
 
  render();
-
  setHeroImage();
 
 }
@@ -1593,20 +1215,14 @@ function setHeroImage(){
 }
 
 
-/* =========================
-   IMAGE LIST
-========================= */
-
 function imgList(v){
-
  return split(v);
-
 }
 
 
-/* =========================
-   RENDER PRODUCTS
-========================= */
+/* =========================================
+   RENDER
+========================================= */
 
 function render(){
 
@@ -1631,6 +1247,7 @@ function render(){
     )
   );
 
+
  if(!rows.length){
 
   $('products').innerHTML =
@@ -1640,8 +1257,8 @@ function render(){
    '0 article';
 
   return;
-
  }
+
 
  $('resultCount').textContent =
   rows.length +
@@ -1650,38 +1267,35 @@ function render(){
 
 
  $('products').innerHTML =
-  rows.map(p => {
+  rows.map(
+   p=>{
 
-   const im =
-    imgList(
-     p.image_url
-    )[0] || '';
+    const im =
+     imgList(
+      p.image_url
+     )[0] || '';
 
-   return `
-   <article
-    class="card"
-    onclick="openDetails('${esc(p.id)}')"
-   >
+    return `
+    <article
+     class="card"
+     onclick="openDetails('${esc(p.id)}')"
+    >
 
     ${
      im
       ?
-      `
-      <img
+      `<img
        src="${esc(im)}"
        alt="${esc(p.nom)}"
        loading="lazy"
        decoding="async"
-       onerror="this.style.display='none'"
-      >
-      `
+       onerror="this.style.display='none'
+      ">`
       :
       ''
     }
 
-    <h3>
-     ${esc(p.nom)}
-    </h3>
+    <h3>${esc(p.nom)}</h3>
 
     <div class="price">
      ${money(p.prix)}
@@ -1690,14 +1304,12 @@ function render(){
     ${
      p.modele
       ?
-      `
-      <div class="modelTxt">
+      `<div class="modelTxt">
        📱 ${esc(
         String(p.modele)
          .replaceAll('||',' • ')
        )}
-      </div>
-      `
+      </div>`
       :
       ''
     }
@@ -1713,33 +1325,30 @@ function render(){
     ${
      !p.epuise
       ?
-      `
-      <button
+      `<button
        class="quick"
        title="Ajouter au panier"
        onclick="
         event.stopPropagation();
         quickAdd('${esc(p.id)}')
        "
-      >
-       ＋
-      </button>
-      `
+      >＋</button>`
       :
       ''
     }
 
-   </article>
-   `;
+    </article>
+    `;
 
-  }).join('');
+   }
+  ).join('');
 
 }
 
 
-/* =========================
+/* =========================================
    DETAILS
-========================= */
+========================================= */
 
 function openDetails(id){
 
@@ -1752,13 +1361,10 @@ function openDetails(id){
 
  selectedModel = null;
 
- if(!current)
-  return;
+ if(!current) return;
 
  const images =
-  imgList(
-   current.image_url
-  );
+  imgList(current.image_url);
 
  const models =
   split(current.modele);
@@ -1766,41 +1372,33 @@ function openDetails(id){
  const isCase =
   category(current) === 'cases';
 
+
  $('detailContent').innerHTML = `
 
  <img
   class="heroImg"
   src="${esc(images[0] || '')}"
-  alt=""
-  loading="eager"
-  decoding="async"
+  alt="${esc(current.nom)}"
  >
 
  ${
   images.length > 1
    ?
-   `
-   <div class="gallery">
-
-    ${images.map(x => `
+   `<div class="gallery">
+    ${images.map(x=>`
      <img
       src="${esc(x)}"
-      loading="lazy"
       onclick="
        document.querySelector('.heroImg').src=this.src
       "
      >
     `).join('')}
-
-   </div>
-   `
+   </div>`
    :
    ''
  }
 
- <h2>
-  ${esc(current.nom)}
- </h2>
+ <h2>${esc(current.nom)}</h2>
 
  <div class="price">
   ${money(current.prix)}
@@ -1810,21 +1408,19 @@ function openDetails(id){
   isCase && models.length
    ?
    `
-   <h3>
-    📱 Choisir le modèle
-   </h3>
+   <h3>📱 Choisir le modèle</h3>
 
    <div class="models">
 
-    ${models.map(m => `
-     <button
-      class="model"
-      data-model="${esc(m)}"
-      onclick="chooseModel(this)"
-     >
-      ${esc(m)}
-     </button>
-    `).join('')}
+   ${models.map(m=>`
+    <button
+     class="model"
+     data-model="${esc(m)}"
+     onclick="chooseModel(this)"
+    >
+     ${esc(m)}
+    </button>
+   `).join('')}
 
    </div>
    `
@@ -1837,11 +1433,11 @@ function openDetails(id){
   ${current.epuise ? 'disabled' : ''}
   onclick="addCurrentToCart()"
  >
-  ${
-   current.epuise
-    ? '❌ ÉPUISÉ'
-    : '🛒 Ajouter au panier'
-  }
+ ${
+  current.epuise
+   ? '❌ ÉPUISÉ'
+   : '🛒 Ajouter au panier'
+ }
  </button>
 
  <button
@@ -1853,9 +1449,7 @@ function openDetails(id){
 
  `;
 
- $('details')
-  .classList
-  .add('show');
+ $('details').classList.add('show');
 
 }
 
@@ -1869,11 +1463,9 @@ function quickAdd(id){
     String(id)
   );
 
- if(!p || p.epuise)
-  return;
+ if(!p || p.epuise) return;
 
  current = p;
-
  selectedModel = null;
 
  const models =
@@ -1885,7 +1477,6 @@ function quickAdd(id){
  ){
 
   openDetails(id);
-
   return;
 
  }
@@ -1903,8 +1494,7 @@ function chooseModel(btn){
  document
   .querySelectorAll('.model')
   .forEach(
-   x =>
-    x.classList.remove('selected')
+   x=>x.classList.remove('selected')
   );
 
  btn.classList.add('selected');
@@ -1912,17 +1502,16 @@ function chooseModel(btn){
 }
 
 
-/* =========================
-   ADD TO CART
-========================= */
+/* =========================================
+   ADD CART
+========================================= */
 
 function addCurrentToCart(){
 
  if(
   !current ||
   current.epuise
- )
-  return;
+ ) return;
 
  const isCase =
   category(current) === 'cases';
@@ -1941,8 +1530,8 @@ function addCurrentToCart(){
   );
 
   return;
-
  }
+
 
  const key =
   String(current.id) +
@@ -1951,8 +1540,9 @@ function addCurrentToCart(){
 
  const found =
   cart.find(
-   x => x.key === key
+   x=>x.key === key
   );
+
 
  if(found){
 
@@ -1986,6 +1576,7 @@ function addCurrentToCart(){
 
  }
 
+
  saveCart();
 
  closeModal('details');
@@ -1995,9 +1586,9 @@ function addCurrentToCart(){
 }
 
 
-/* =========================
+/* =========================================
    CART
-========================= */
+========================================= */
 
 function openCart(){
 
@@ -2019,8 +1610,7 @@ function renderCart(){
 
   $('cartSummary').innerHTML = '';
 
-  $('checkoutBtn').disabled =
-   true;
+  $('checkoutBtn').disabled = true;
 
   updateCartCount();
 
@@ -2028,36 +1618,31 @@ function renderCart(){
 
  }
 
- $('checkoutBtn').disabled =
-  false;
+
+ $('checkoutBtn').disabled = false;
 
 
  $('cartList').innerHTML =
   cart.map(
-   (x,i) => `
+   (x,i)=>`
 
    <div class="cartItem">
 
     <img
      src="${esc(x.image)}"
      loading="lazy"
-     decoding="async"
     >
 
     <div>
 
-     <b>
-      ${esc(x.nom)}
-     </b>
+     <b>${esc(x.nom)}</b>
 
      ${
       x.modele
        ?
-       `
-       <div class="modelTxt">
+       `<div class="modelTxt">
         📱 ${esc(x.modele)}
-       </div>
-       `
+       </div>`
        :
        ''
      }
@@ -2068,19 +1653,13 @@ function renderCart(){
 
      <div class="qty">
 
-      <button
-       onclick="changeQty(${i},-1)"
-      >
+      <button onclick="changeQty(${i},-1)">
        −
       </button>
 
-      <b>
-       ${x.qty}
-      </b>
+      <b>${x.qty}</b>
 
-      <button
-       onclick="changeQty(${i},1)"
-      >
+      <button onclick="changeQty(${i},1)">
        +
       </button>
 
@@ -2103,10 +1682,8 @@ function renderCart(){
 
  const sub =
   cart.reduce(
-   (n,x) =>
-    n +
-    x.prix *
-    x.qty,
+   (n,x)=>
+    n + x.prix * x.qty,
    0
   );
 
@@ -2115,21 +1692,19 @@ function renderCart(){
 
  <div class="summary">
 
-  <b>
-   Sous-total
-  </b>
+ <b>Sous-total</b>
 
-  <br>
+ <br>
 
-  <span class="total">
-   ${money(sub)}
-  </span>
+ <span class="total">
+  ${money(sub)}
+ </span>
 
-  <br>
+ <br>
 
-  <small>
-   Les frais de livraison seront calculés à la validation.
-  </small>
+ <small>
+ Les frais de livraison seront calculés à la validation.
+ </small>
 
  </div>
 
@@ -2144,14 +1719,10 @@ function changeQty(i,d){
 
  cart[i].qty += d;
 
- if(cart[i].qty <= 0){
-
+ if(cart[i].qty <= 0)
   cart.splice(i,1);
 
- }
-
  saveCart();
-
  renderCart();
 
 }
@@ -2162,28 +1733,24 @@ function removeCart(i){
  cart.splice(i,1);
 
  saveCart();
-
  renderCart();
 
 }
 
 
-/* =========================
+/* =========================================
    CHECKOUT
-========================= */
+========================================= */
 
 function openCheckout(){
 
- if(!cart.length)
-  return;
+ if(!cart.length) return;
 
  closeModal('cart');
 
  renderCheckoutItems();
 
- $('checkout')
-  .classList
-  .add('show');
+ $('checkout').classList.add('show');
 
  updateCheckoutTotal();
 
@@ -2193,21 +1760,19 @@ function openCheckout(){
 function renderCheckoutItems(){
 
  $('checkoutItems').innerHTML =
-  cart
-   .map(
-    x =>
-     `
-     🛍️ <b>${esc(x.nom)}</b>
-     ${
-      x.modele
-       ? ' — 📱 ' + esc(x.modele)
-       : ''
-     }
-     × ${x.qty}
-     — ${money(x.prix*x.qty)}
-     `
-   )
-   .join('<br>');
+  cart.map(
+   x=>
+    `
+    🛍️ <b>${esc(x.nom)}</b>
+    ${
+     x.modele
+      ? ' — 📱 ' + esc(x.modele)
+      : ''
+    }
+    × ${x.qty}
+    — ${money(x.prix*x.qty)}
+    `
+  ).join('<br>');
 
 }
 
@@ -2242,10 +1807,8 @@ function updateCheckoutTotal(){
 
  const sub =
   cart.reduce(
-   (n,x) =>
-    n +
-    x.prix *
-    x.qty,
+   (n,x)=>
+    n + x.prix*x.qty,
    0
   );
 
@@ -2273,8 +1836,7 @@ function updateCheckoutTotal(){
  <br>
 
  <span class="total">
-  Total :
-  ${money(sub + f)}
+ Total : ${money(sub+f)}
  </span>
 
  `;
@@ -2282,9 +1844,9 @@ function updateCheckoutTotal(){
 }
 
 
-/* =========================
-   DELIVERY
-========================= */
+/* =========================================
+   DELIVERY UI
+========================================= */
 
 document
  .querySelectorAll(
@@ -2294,7 +1856,7 @@ document
   r =>
    r.addEventListener(
     'change',
-    () => {
+    ()=>{
 
      $('address')
       .classList
@@ -2318,9 +1880,9 @@ $('wilaya')
  );
 
 
-/* =========================
+/* =========================================
    PHONE
-========================= */
+========================================= */
 
 $('phone')
  .addEventListener(
@@ -2336,9 +1898,9 @@ $('phone')
  );
 
 
-/* =========================
+/* =========================================
    ORDER
-========================= */
+========================================= */
 
 $('checkoutForm')
  .addEventListener(
@@ -2350,14 +1912,14 @@ $('checkoutForm')
    if(!cart.length)
     return;
 
+
    const phone =
     $('phone')
      .value
      .trim();
 
-   if(
-    !/^\d{10}$/.test(phone)
-   ){
+
+   if(!/^\d{10}$/.test(phone)){
 
     alert(
      'Le numéro doit contenir exactement 10 chiffres.'
@@ -2367,15 +1929,18 @@ $('checkoutForm')
 
    }
 
+
    const d =
     document.querySelector(
      'input[name=delivery]:checked'
     )?.value;
 
+
    const i =
     Number(
      $('wilaya').value
     );
+
 
    if(
     !d ||
@@ -2391,6 +1956,7 @@ $('checkoutForm')
     return;
 
    }
+
 
    if(
     d === 'Domicile' &&
@@ -2408,22 +1974,21 @@ $('checkoutForm')
 
    const batch =
     crypto.randomUUID
-     ?
-     crypto.randomUUID()
-     :
-     Date.now().toString();
+     ? crypto.randomUUID()
+     : Date.now().toString();
+
 
    const created =
     new Date().toISOString();
 
 
-   /*
-     On envoie uniquement les colonnes nécessaires.
-   */
+   const delivery =
+    deliveryCost();
+
 
    const rows =
     cart.map(
-     x => ({
+     x=>({
 
       coque_id:x.id,
 
@@ -2458,7 +2023,20 @@ $('checkoutForm')
 
       panier_id:batch,
 
-      quantite:x.qty
+      quantite:x.qty,
+
+      prix:Number(
+       x.prix || 0
+      ),
+
+      prix_livraison:
+       Number(delivery || 0),
+
+      total:
+       Number(
+        x.prix || 0
+       ) * x.qty +
+       Number(delivery || 0)
 
      })
     );
@@ -2472,27 +2050,26 @@ $('checkoutForm')
 
    if(r.error){
 
-    $('orderMsg').className =
-     'error';
+    $('orderMsg').className = 'error';
 
     $('orderMsg').innerHTML =
      '❌ Commande non enregistrée.<br><br>' +
      esc(r.error.message);
+
+    console.error(r.error);
 
     return;
 
    }
 
 
-   $('orderMsg').className =
-    'success';
+   $('orderMsg').className = 'success';
 
-   $('orderMsg').innerHTML =
-    `
-    ✅ Commande enregistrée avec succès !
-    <br><br>
-    💗 Merci pour votre commande.
-    `;
+   $('orderMsg').innerHTML = `
+   ✅ Commande enregistrée avec succès !
+   <br><br>
+   💗 Merci pour votre commande.
+   `;
 
 
    cart = [];
@@ -2508,23 +2085,10 @@ $('checkoutForm')
    updateCheckoutTotal();
 
 
-   /*
-     On vide le cache produits pour que
-     les prochaines visites récupèrent
-     l'état actualisé.
-   */
-
-   clearPublicCache();
-
-
    setTimeout(
-    () => {
-
+    ()=>{
      closeModal('checkout');
-
-     $('orderMsg').className =
-      'hidden';
-
+     $('orderMsg').className='hidden';
     },
     2200
    );
@@ -2533,21 +2097,20 @@ $('checkoutForm')
  );
 
 
-/* =========================
+/* =========================================
    CATEGORIES
-========================= */
+========================================= */
 
 document
  .querySelectorAll('.cat')
  .forEach(
   b =>
-   b.onclick = () => {
+   b.onclick = ()=>{
 
     document
      .querySelectorAll('.cat')
      .forEach(
-      x =>
-       x.classList.remove('active')
+      x=>x.classList.remove('active')
      );
 
     b.classList.add('active');
@@ -2561,18 +2124,16 @@ document
  );
 
 
-/* =========================
+/* =========================================
    SEARCH
-========================= */
+========================================= */
 
-$('search')
- .oninput =
- render;
+$('search').oninput = render;
 
 
-/* =========================
-   MODAL
-========================= */
+/* =========================================
+   MODALS
+========================================= */
 
 function closeModal(id){
 
@@ -2583,29 +2144,16 @@ function closeModal(id){
 }
 
 
-/* =========================
+/* =========================================
    INIT
-========================= */
+========================================= */
 
 updateCartCount();
 
 load();
 
-
-/*
-================================================
- IMPORTANT ANTI-EGRESS
-
- Il n'y a volontairement :
- - aucun setInterval
- - aucun polling
- - aucun rechargement automatique
- - aucun select('*')
- - aucun téléchargement périodique
-================================================
-*/
-
 </script>
 
 </body>
 </html>
+```
