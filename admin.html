@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -9,9 +8,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -20,22 +17,9 @@ body{
   color:#281d22;
 }
 
-button,
-input,
-select,
-textarea{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-.hidden{
-  display:none!important;
-}
-
-/* ================= LOGIN ================= */
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
 
 .login-page{
   min-height:100vh;
@@ -72,9 +56,7 @@ button{
   margin-bottom:28px;
 }
 
-.field{
-  margin-bottom:16px;
-}
+.field{margin-bottom:16px}
 
 .field label{
   display:block;
@@ -92,7 +74,6 @@ button{
   padding:13px 14px;
   background:#fff;
   outline:none;
-  transition:.2s;
 }
 
 .field input:focus,
@@ -112,10 +93,6 @@ button{
   font-weight:700;
 }
 
-.primary-btn:hover{
-  background:#c83f75;
-}
-
 .error{
   margin-top:14px;
   color:#c62828;
@@ -124,12 +101,6 @@ button{
   padding:11px;
   font-size:14px;
   display:none;
-}
-
-/* ================= APP ================= */
-
-.app{
-  min-height:100vh;
 }
 
 .topbar{
@@ -207,8 +178,6 @@ button{
   color:#927a84;
 }
 
-/* ================= DASHBOARD ================= */
-
 .stats{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -233,8 +202,6 @@ button{
   color:#8e747e;
   margin-top:5px;
 }
-
-/* ================= PRODUCTS ================= */
 
 .toolbar{
   display:flex;
@@ -310,9 +277,7 @@ button{
   font-weight:700;
 }
 
-.product-body{
-  padding:16px;
-}
+.product-body{padding:16px}
 
 .product-name{
   font-weight:800;
@@ -369,8 +334,6 @@ button{
   color:#927b84;
 }
 
-/* ================= ORDERS ================= */
-
 .orders-list{
   display:flex;
   flex-direction:column;
@@ -380,7 +343,7 @@ button{
 .order-card{
   background:#fff;
   border:1px solid #f0dfe6;
-  border-radius:18px;
+  border-radius:20px;
   padding:18px;
 }
 
@@ -389,12 +352,19 @@ button{
   justify-content:space-between;
   gap:15px;
   flex-wrap:wrap;
-  margin-bottom:10px;
+  margin-bottom:15px;
 }
 
 .order-id{
   font-weight:800;
   color:#c54174;
+  font-size:17px;
+}
+
+.order-date{
+  color:#927b84;
+  font-size:13px;
+  margin-top:4px;
 }
 
 .order-info{
@@ -406,9 +376,82 @@ button{
 .order-total{
   font-weight:800;
   color:#d34f83;
+  font-size:18px;
 }
 
-/* ================= MODAL ================= */
+.order-product{
+  margin-top:15px;
+  padding:14px;
+  background:#fff8fb;
+  border:1px solid #f2dce5;
+  border-radius:16px;
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.order-product-image{
+  width:90px;
+  height:90px;
+  border-radius:14px;
+  overflow:hidden;
+  background:#f8edf1;
+  flex:none;
+}
+
+.order-product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.order-product-info{
+  min-width:0;
+}
+
+.order-product-name{
+  font-weight:800;
+  font-size:16px;
+  color:#33242a;
+}
+
+.order-product-model{
+  margin-top:4px;
+  color:#8a717b;
+  font-size:14px;
+}
+
+.order-product-price{
+  margin-top:5px;
+  color:#d34f83;
+  font-weight:800;
+}
+
+.order-quantity{
+  margin-top:5px;
+  font-size:13px;
+  color:#75616a;
+}
+
+.order-status{
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 10px;
+  border-radius:20px;
+  background:#fff0f5;
+  color:#c43e73;
+  font-size:12px;
+  font-weight:700;
+}
+
+.order-delivery{
+  margin-top:12px;
+  padding:12px;
+  background:#faf7f8;
+  border-radius:12px;
+  color:#75616a;
+  font-size:14px;
+}
 
 .modal{
   position:fixed;
@@ -421,9 +464,7 @@ button{
   z-index:100;
 }
 
-.modal.show{
-  display:flex;
-}
+.modal.show{display:flex}
 
 .modal-card{
   width:100%;
@@ -462,9 +503,7 @@ button{
   gap:14px;
 }
 
-.full{
-  grid-column:1/-1;
-}
+.full{grid-column:1/-1}
 
 .images-preview{
   display:flex;
@@ -506,8 +545,6 @@ button{
   color:#fff;
 }
 
-/* ================= TOAST ================= */
-
 .toast{
   position:fixed;
   right:20px;
@@ -528,9 +565,8 @@ button{
   transform:translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media(max-width:800px){
+
   .sidebar{
     width:75px;
     padding:15px 8px;
@@ -539,10 +575,6 @@ button{
   .nav-btn{
     font-size:0;
     text-align:center;
-  }
-
-  .nav-btn::first-letter{
-    font-size:20px;
   }
 
   .content{
@@ -555,6 +587,7 @@ button{
 }
 
 @media(max-width:600px){
+
   .topbar{
     padding:0 15px;
   }
@@ -574,13 +607,15 @@ button{
   .products-grid{
     grid-template-columns:1fr;
   }
+
+  .order-product{
+    align-items:flex-start;
+  }
 }
 </style>
 </head>
 
 <body>
-
-<!-- ================= LOGIN ================= -->
 
 <section id="loginPage" class="login-page">
 
@@ -596,22 +631,12 @@ button{
 
       <div class="field">
         <label>Email</label>
-        <input
-          id="loginEmail"
-          type="email"
-          autocomplete="email"
-          required
-        >
+        <input id="loginEmail" type="email" autocomplete="email" required>
       </div>
 
       <div class="field">
         <label>Mot de passe</label>
-        <input
-          id="loginPassword"
-          type="password"
-          autocomplete="current-password"
-          required
-        >
+        <input id="loginPassword" type="password" autocomplete="current-password" required>
       </div>
 
       <button class="primary-btn" type="submit">
@@ -626,8 +651,6 @@ button{
 
 </section>
 
-
-<!-- ================= APP ================= -->
 
 <section id="app" class="app hidden">
 
@@ -648,24 +671,15 @@ button{
 
     <aside class="sidebar">
 
-      <button
-        class="nav-btn active"
-        data-page="dashboard"
-      >
+      <button class="nav-btn active" data-page="dashboard">
         📊 Tableau de bord
       </button>
 
-      <button
-        class="nav-btn"
-        data-page="products"
-      >
+      <button class="nav-btn" data-page="products">
         📦 Produits
       </button>
 
-      <button
-        class="nav-btn"
-        data-page="orders"
-      >
+      <button class="nav-btn" data-page="orders">
         🛒 Commandes
       </button>
 
@@ -673,8 +687,6 @@ button{
 
 
     <main class="content">
-
-      <!-- DASHBOARD -->
 
       <section id="dashboardPage">
 
@@ -689,38 +701,24 @@ button{
         <div class="stats">
 
           <div class="stat">
-            <div id="statProducts" class="stat-number">
-              0
-            </div>
-            <div class="stat-label">
-              Produits
-            </div>
+            <div id="statProducts" class="stat-number">0</div>
+            <div class="stat-label">Produits</div>
           </div>
 
           <div class="stat">
-            <div id="statOrders" class="stat-number">
-              0
-            </div>
-            <div class="stat-label">
-              Commandes
-            </div>
+            <div id="statOrders" class="stat-number">0</div>
+            <div class="stat-label">Commandes</div>
           </div>
 
           <div class="stat">
-            <div id="statSold" class="stat-number">
-              0
-            </div>
-            <div class="stat-label">
-              Produits épuisés
-            </div>
+            <div id="statSold" class="stat-number">0</div>
+            <div class="stat-label">Produits épuisés</div>
           </div>
 
         </div>
 
       </section>
 
-
-      <!-- PRODUCTS -->
 
       <section id="productsPage" class="hidden">
 
@@ -758,8 +756,6 @@ button{
       </section>
 
 
-      <!-- ORDERS -->
-
       <section id="ordersPage" class="hidden">
 
         <h1 class="page-title">
@@ -767,8 +763,19 @@ button{
         </h1>
 
         <p class="page-subtitle">
-          Commandes enregistrées.
+          Tu peux voir exactement quel produit a été commandé.
         </p>
+
+        <div class="toolbar">
+
+          <input
+            id="orderSearch"
+            class="search"
+            type="search"
+            placeholder="Rechercher client, téléphone, produit..."
+          >
+
+        </div>
 
         <div id="ordersList" class="orders-list">
 
@@ -786,8 +793,6 @@ button{
 
 </section>
 
-
-<!-- ================= PRODUCT MODAL ================= -->
 
 <div id="productModal" class="modal">
 
@@ -808,29 +813,18 @@ button{
 
     <form id="productForm">
 
-      <input
-        id="productId"
-        type="hidden"
-      >
+      <input id="productId" type="hidden">
 
       <div class="form-grid">
 
         <div class="field">
           <label>Nom du produit</label>
-          <input
-            id="productName"
-            required
-          >
+          <input id="productName" required>
         </div>
 
         <div class="field">
           <label>Prix (DA)</label>
-          <input
-            id="productPrice"
-            type="number"
-            min="0"
-            required
-          >
+          <input id="productPrice" type="number" min="0" required>
         </div>
 
         <div class="field">
@@ -839,26 +833,14 @@ button{
 
           <select id="productCategory">
 
-            <option value="Cases">
-              Cases
-            </option>
-
-            <option value="Accessoires">
-              Accessoires
-            </option>
-
-            <option value="Ventouses">
-              Ventouses
-            </option>
-
-            <option value="iPad">
-              iPad
-            </option>
+            <option value="Cases">Cases</option>
+            <option value="Accessoires">Accessoires</option>
+            <option value="Ventouses">Ventouses</option>
+            <option value="iPad">iPad</option>
 
           </select>
 
         </div>
-
 
         <div class="field">
 
@@ -871,12 +853,9 @@ button{
 
         </div>
 
-
         <div class="field full">
 
-          <label>
-            Photos
-          </label>
+          <label>Photos</label>
 
           <input
             id="productImages"
@@ -889,22 +868,14 @@ button{
 
         </div>
 
-
         <div class="field full">
 
-          <label>
-            État
-          </label>
+          <label>État</label>
 
           <select id="productSold">
 
-            <option value="false">
-              Disponible
-            </option>
-
-            <option value="true">
-              Épuisé
-            </option>
+            <option value="false">Disponible</option>
+            <option value="true">Épuisé</option>
 
           </select>
 
@@ -915,18 +886,11 @@ button{
 
       <div class="modal-actions">
 
-        <button
-          type="button"
-          id="cancelModal"
-          class="cancel-btn"
-        >
+        <button type="button" id="cancelModal" class="cancel-btn">
           Annuler
         </button>
 
-        <button
-          type="submit"
-          class="save-btn"
-        >
+        <button type="submit" class="save-btn">
           Enregistrer
         </button>
 
@@ -946,34 +910,22 @@ button{
 
 <script>
 
-/* =========================================================
-   SUPABASE
-========================================================= */
-
 const SUPABASE_URL =
   "https://uukyhedqgzggkpbsooby.supabase.co";
 
 const SUPABASE_KEY =
   "sb_publishable_nWuy8_mRLoX41Mn7FrRC9g_baSwOBeh";
 
-const db =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 
-
-/* =========================================================
-   VARIABLES
-========================================================= */
 
 let products = [];
+let orders = [];
 let editingProductId = null;
 
-
-/* =========================================================
-   HELPERS
-========================================================= */
 
 function escapeHTML(value){
 
@@ -993,12 +945,20 @@ function showToast(message){
     document.getElementById("toast");
 
   toast.textContent = message;
-
   toast.classList.add("show");
 
   setTimeout(() => {
     toast.classList.remove("show");
   },3000);
+
+}
+
+
+function formatPrice(value){
+
+  const n = Number(value || 0);
+
+  return n.toLocaleString("fr-FR") + " DA";
 
 }
 
@@ -1017,80 +977,67 @@ function getImages(product){
 }
 
 
-function formatPrice(value){
+function getFirstImage(product){
 
-  const n = Number(value || 0);
-
-  return n.toLocaleString("fr-FR") + " DA";
+  return getImages(product)[0] || "";
 
 }
 
 
-/* =========================================================
-   LOGIN
-========================================================= */
+/* LOGIN */
 
 document
-  .getElementById("loginForm")
-  .addEventListener("submit", async function(e){
+.getElementById("loginForm")
+.addEventListener("submit",async function(e){
 
-    e.preventDefault();
+  e.preventDefault();
 
-    const email =
-      document.getElementById("loginEmail").value.trim();
+  const email =
+    document.getElementById("loginEmail").value.trim();
 
-    const password =
-      document.getElementById("loginPassword").value;
+  const password =
+    document.getElementById("loginPassword").value;
 
-    const errorBox =
-      document.getElementById("loginError");
+  const errorBox =
+    document.getElementById("loginError");
 
-    errorBox.style.display = "none";
-    errorBox.textContent = "";
+  errorBox.style.display = "none";
 
-    const { data, error } =
-      await db.auth.signInWithPassword({
-        email,
-        password
-      });
+  const { data,error } =
+    await db.auth.signInWithPassword({
+      email,
+      password
+    });
 
-    if(error){
+  if(error){
 
-      console.error("LOGIN ERROR :",error);
+    console.error(error);
 
-      errorBox.textContent =
-        error.message || "Erreur de connexion.";
+    errorBox.textContent =
+      error.message || "Erreur de connexion.";
 
-      errorBox.style.display = "block";
+    errorBox.style.display = "block";
 
-      return;
-    }
+    return;
+  }
 
-    console.log("Connexion réussie :",data);
+  console.log("Connexion réussie",data);
 
-    showApp();
+  showApp();
 
-  });
+});
 
-
-/* =========================================================
-   SESSION
-========================================================= */
 
 async function checkSession(){
 
   const {
-    data: { session }
+    data:{session}
   } = await db.auth.getSession();
 
   if(session){
-
     showApp();
-
   }else{
-
     showLogin();
-
   }
 
 }
@@ -1099,12 +1046,12 @@ async function checkSession(){
 function showLogin(){
 
   document
-    .getElementById("loginPage")
-    .classList.remove("hidden");
+  .getElementById("loginPage")
+  .classList.remove("hidden");
 
   document
-    .getElementById("app")
-    .classList.add("hidden");
+  .getElementById("app")
+  .classList.add("hidden");
 
 }
 
@@ -1112,89 +1059,66 @@ function showLogin(){
 async function showApp(){
 
   document
-    .getElementById("loginPage")
-    .classList.add("hidden");
+  .getElementById("loginPage")
+  .classList.add("hidden");
 
   document
-    .getElementById("app")
-    .classList.remove("hidden");
+  .getElementById("app")
+  .classList.remove("hidden");
 
   await loadProducts();
-
   await loadOrders();
 
 }
 
 
-/* =========================================================
-   LOGOUT
-========================================================= */
+document
+.getElementById("logoutBtn")
+.addEventListener("click",async function(){
+
+  await db.auth.signOut();
+
+  showLogin();
+
+});
+
+
+/* NAVIGATION */
 
 document
-  .getElementById("logoutBtn")
-  .addEventListener("click",async function(){
+.querySelectorAll(".nav-btn")
+.forEach(button => {
 
-    await db.auth.signOut();
+  button.addEventListener("click",function(){
 
-    showLogin();
+    document
+    .querySelectorAll(".nav-btn")
+    .forEach(x => x.classList.remove("active"));
+
+    this.classList.add("active");
+
+    const page = this.dataset.page;
+
+    document
+    .getElementById("dashboardPage")
+    .classList.toggle("hidden",page !== "dashboard");
+
+    document
+    .getElementById("productsPage")
+    .classList.toggle("hidden",page !== "products");
+
+    document
+    .getElementById("ordersPage")
+    .classList.toggle("hidden",page !== "orders");
 
   });
 
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-document
-  .querySelectorAll(".nav-btn")
-  .forEach(button => {
-
-    button.addEventListener("click",function(){
-
-      document
-        .querySelectorAll(".nav-btn")
-        .forEach(x =>
-          x.classList.remove("active")
-        );
-
-      this.classList.add("active");
-
-      const page =
-        this.dataset.page;
-
-      document
-        .getElementById("dashboardPage")
-        .classList.toggle(
-          "hidden",
-          page !== "dashboard"
-        );
-
-      document
-        .getElementById("productsPage")
-        .classList.toggle(
-          "hidden",
-          page !== "products"
-        );
-
-      document
-        .getElementById("ordersPage")
-        .classList.toggle(
-          "hidden",
-          page !== "orders"
-        );
-
-    });
-
-  });
+});
 
 
-/* =========================================================
-   LOAD PRODUCTS
-========================================================= */
+/* PRODUCTS */
 
 async function loadProducts(){
-
-  console.log("🔎 Chargement des produits...");
 
   const grid =
     document.getElementById("productsGrid");
@@ -1205,31 +1129,15 @@ async function loadProducts(){
     </div>
   `;
 
+  const { data,error } =
+    await db
+      .from("coques")
+      .select("*");
 
-  /*
-    IMPORTANT :
-    On utilise select("*") pour ne pas demander
-    de colonnes qui n'existent peut-être pas.
-  */
-
-  const {
-    data,
-    error
-  } = await db
-    .from("coques")
-    .select("*");
-
-
-  console.log("📦 PRODUITS :",data);
-  console.log("❌ ERREUR :",error);
-
+  console.log("COQUES :",data);
+  console.log("ERREUR :",error);
 
   if(error){
-
-    console.error(
-      "ERREUR CHARGEMENT PRODUITS :",
-      error
-    );
 
     grid.innerHTML = `
       <div class="empty">
@@ -1242,46 +1150,24 @@ async function loadProducts(){
     `;
 
     return;
-
   }
 
-
-  products = data || [];
-
-
-  /*
-    On trie côté navigateur.
-    Ainsi, même si created_at n'existe pas,
-    la récupération fonctionne.
-  */
+  products = Array.isArray(data) ? data : [];
 
   products.sort((a,b) => {
 
-    return String(
-      b.created_at || ""
-    ).localeCompare(
-      String(a.created_at || "")
-    );
+    return String(b.created_at || "")
+      .localeCompare(
+        String(a.created_at || "")
+      );
 
   });
 
-
-  console.log(
-    "✅ PRODUITS CHARGÉS :",
-    products
-  );
-
-
   renderProducts();
-
   updateStats();
 
 }
 
-
-/* =========================================================
-   RENDER PRODUCTS
-========================================================= */
 
 function renderProducts(){
 
@@ -1295,18 +1181,13 @@ function renderProducts(){
       .toLowerCase()
       .trim();
 
-
   const filtered =
     products.filter(product => {
 
       const text = [
 
         product.nom,
-
         product.categorie,
-
-        product.category,
-
         product.modele
 
       ]
@@ -1323,35 +1204,33 @@ function renderProducts(){
 
     grid.innerHTML = `
       <div class="empty">
+
         Aucun produit trouvé.
+
         <br><br>
+
         <button
           class="add-btn"
           onclick="openProductModal()"
         >
           + Ajouter un produit
         </button>
+
       </div>
     `;
 
     return;
-
   }
 
 
   grid.innerHTML =
     filtered.map(product => {
 
-      const images =
-        getImages(product);
-
       const image =
-        images[0] || "";
+        getFirstImage(product);
 
       const category =
-        product.categorie ||
-        product.category ||
-        "Cases";
+        product.categorie || "Cases";
 
       const models =
         product.modele ||
@@ -1364,26 +1243,20 @@ function renderProducts(){
 
       return `
 
-        <article
-          class="product-card"
-        >
+        <article class="product-card">
 
           <div class="product-image">
 
             ${
               image
-
               ?
-
               `
               <img
                 src="${escapeHTML(image)}"
                 alt="${escapeHTML(product.nom)}"
               >
               `
-
               :
-
               `
               <div class="no-image">
                 Aucune photo
@@ -1452,29 +1325,16 @@ function renderProducts(){
 }
 
 
-/* =========================================================
-   SEARCH
-========================================================= */
-
 document
-  .getElementById("productSearch")
-  .addEventListener(
-    "input",
-    renderProducts
-  );
+.getElementById("productSearch")
+.addEventListener("input",renderProducts);
 
-
-/* =========================================================
-   STATS
-========================================================= */
 
 function updateStats(){
 
   document
-    .getElementById("statProducts")
-    .textContent =
-      products.length;
-
+  .getElementById("statProducts")
+  .textContent = products.length;
 
   const sold =
     products.filter(product =>
@@ -1482,87 +1342,69 @@ function updateStats(){
       product.epuise === "true"
     ).length;
 
-
   document
-    .getElementById("statSold")
-    .textContent =
-      sold;
+  .getElementById("statSold")
+  .textContent = sold;
 
 }
 
 
-/* =========================================================
-   MODAL
-========================================================= */
+/* PRODUCT MODAL */
 
 function openProductModal(product=null){
 
   editingProductId =
+    product ? product.id : null;
+
+  document
+  .getElementById("productModal")
+  .classList.add("show");
+
+  document
+  .getElementById("modalTitle")
+  .textContent =
     product
-    ? product.id
-    : null;
-
-
-  document
-    .getElementById("productModal")
-    .classList.add("show");
-
+    ? "Modifier le produit"
+    : "Ajouter un produit";
 
   document
-    .getElementById("modalTitle")
-    .textContent =
-      product
-      ? "Modifier le produit"
-      : "Ajouter un produit";
-
+  .getElementById("productId")
+  .value =
+    product?.id || "";
 
   document
-    .getElementById("productId")
-    .value =
-      product?.id || "";
-
-
-  document
-    .getElementById("productName")
-    .value =
-      product?.nom || "";
-
+  .getElementById("productName")
+  .value =
+    product?.nom || "";
 
   document
-    .getElementById("productPrice")
-    .value =
-      product?.prix ?? "";
-
-
-  document
-    .getElementById("productCategory")
-    .value =
-      product?.categorie ||
-      product?.category ||
-      "Cases";
-
+  .getElementById("productPrice")
+  .value =
+    product?.prix ?? "";
 
   document
-    .getElementById("productModels")
-    .value =
-      product?.modele || "";
-
-
-  document
-    .getElementById("productSold")
-    .value =
-      (
-        product?.epuise === true ||
-        product?.epuise === "true"
-      )
-      ? "true"
-      : "false";
-
+  .getElementById("productCategory")
+  .value =
+    product?.categorie || "Cases";
 
   document
-    .getElementById("productImages")
-    .value = "";
+  .getElementById("productModels")
+  .value =
+    product?.modele || "";
 
+  document
+  .getElementById("productSold")
+  .value =
+    (
+      product?.epuise === true ||
+      product?.epuise === "true"
+    )
+    ? "true"
+    : "false";
+
+  document
+  .getElementById("productImages")
+  .value = "";
 
   renderImagePreview(
     getImages(product)
@@ -1574,8 +1416,8 @@ function openProductModal(product=null){
 function closeProductModal(){
 
   document
-    .getElementById("productModal")
-    .classList.remove("show");
+  .getElementById("productModal")
+  .classList.remove("show");
 
   editingProductId = null;
 
@@ -1583,69 +1425,66 @@ function closeProductModal(){
 
 
 document
-  .getElementById("addProductBtn")
-  .addEventListener(
-    "click",
-    () => openProductModal()
-  );
+.getElementById("addProductBtn")
+.addEventListener(
+  "click",
+  () => openProductModal()
+);
 
 
 document
-  .getElementById("closeModal")
-  .addEventListener(
-    "click",
-    closeProductModal
-  );
+.getElementById("closeModal")
+.addEventListener(
+  "click",
+  closeProductModal
+);
 
 
 document
-  .getElementById("cancelModal")
-  .addEventListener(
-    "click",
-    closeProductModal
-  );
+.getElementById("cancelModal")
+.addEventListener(
+  "click",
+  closeProductModal
+);
 
 
-/* =========================================================
-   PREVIEW IMAGES
-========================================================= */
+/* IMAGE */
 
 document
-  .getElementById("productImages")
-  .addEventListener(
-    "change",
-    async function(){
+.getElementById("productImages")
+.addEventListener(
+  "change",
+  async function(){
 
-      const files =
-        [...this.files];
+    const files = [...this.files];
 
-      if(!files.length){
-        return;
-      }
+    if(!files.length){
+      return;
+    }
 
-      const urls = [];
+    const urls = [];
 
-      for(const file of files){
+    for(const file of files){
 
-        try{
+      try{
 
-          const compressed =
-            await compressImage(file);
+        const compressed =
+          await compressImage(file);
 
-          urls.push(compressed);
+        urls.push(compressed);
 
-        }catch(error){
+      }catch(error){
 
-          console.error(error);
-
-        }
+        console.error(error);
 
       }
-
-      renderImagePreview(urls);
 
     }
-  );
+
+    renderImagePreview(urls);
+
+  }
+);
 
 
 function renderImagePreview(images){
@@ -1672,10 +1511,6 @@ function renderImagePreview(images){
 }
 
 
-/* =========================================================
-   IMAGE COMPRESSION
-========================================================= */
-
 function compressImage(file){
 
   return new Promise((resolve,reject) => {
@@ -1685,19 +1520,14 @@ function compressImage(file){
 
     reader.onload = function(){
 
-      const img =
-        new Image();
+      const img = new Image();
 
       img.onload = function(){
 
         const maxSize = 1000;
 
-        let width =
-          img.width;
-
-        let height =
-          img.height;
-
+        let width = img.width;
+        let height = img.height;
 
         if(width > maxSize){
 
@@ -1710,7 +1540,6 @@ function compressImage(file){
 
         }
 
-
         if(height > maxSize){
 
           width =
@@ -1722,13 +1551,11 @@ function compressImage(file){
 
         }
 
-
         const canvas =
           document.createElement("canvas");
 
         canvas.width = width;
         canvas.height = height;
-
 
         const ctx =
           canvas.getContext("2d");
@@ -1741,7 +1568,6 @@ function compressImage(file){
           height
         );
 
-
         resolve(
           canvas.toDataURL(
             "image/jpeg",
@@ -1751,18 +1577,13 @@ function compressImage(file){
 
       };
 
+      img.onerror = reject;
 
-      img.onerror =
-        reject;
-
-      img.src =
-        reader.result;
+      img.src = reader.result;
 
     };
 
-
-    reader.onerror =
-      reject;
+    reader.onerror = reject;
 
     reader.readAsDataURL(file);
 
@@ -1771,29 +1592,25 @@ function compressImage(file){
 }
 
 
-/* =========================================================
-   SAVE PRODUCT
-========================================================= */
+/* SAVE PRODUCT */
 
 document
-  .getElementById("productForm")
-  .addEventListener(
-    "submit",
-    saveProduct
-  );
+.getElementById("productForm")
+.addEventListener(
+  "submit",
+  saveProduct
+);
 
 
 async function saveProduct(e){
 
   e.preventDefault();
 
-
   const name =
     document
       .getElementById("productName")
       .value
       .trim();
-
 
   const price =
     Number(
@@ -1802,19 +1619,16 @@ async function saveProduct(e){
         .value
     );
 
-
   const category =
     document
       .getElementById("productCategory")
       .value;
-
 
   const models =
     document
       .getElementById("productModels")
       .value
       .trim();
-
 
   const sold =
     document
@@ -1824,60 +1638,35 @@ async function saveProduct(e){
 
   if(!name){
 
-    showToast(
-      "Entre le nom du produit."
-    );
+    showToast("Entre le nom du produit.");
 
     return;
-
   }
 
 
   if(!Number.isFinite(price)){
 
-    showToast(
-      "Entre un prix valide."
-    );
+    showToast("Entre un prix valide.");
 
     return;
-
   }
 
 
-  /*
-    IMPORTANT :
-    On n'envoie PAS "category".
-    On utilise uniquement "categorie".
-  */
-
   const payload = {
 
-    nom: name,
-
-    prix: price,
-
-    categorie: category,
-
-    modele: models,
-
-    epuise: sold
+    nom:name,
+    prix:price,
+    categorie:category,
+    modele:models,
+    epuise:sold
 
   };
 
 
-  /* =========================
-     NOUVEL ARTICLE
-  ========================= */
-
   if(!editingProductId){
 
     const files =
-      [
-        ...document
-          .getElementById("productImages")
-          .files
-      ];
-
+      [...document.getElementById("productImages").files];
 
     if(files.length){
 
@@ -1887,17 +1676,13 @@ async function saveProduct(e){
 
         try{
 
-          const compressed =
-            await compressImage(file);
-
-          images.push(compressed);
+          images.push(
+            await compressImage(file)
+          );
 
         }catch(error){
 
-          console.error(
-            "Erreur image :",
-            error
-          );
+          console.error(error);
 
         }
 
@@ -1909,49 +1694,26 @@ async function saveProduct(e){
     }
 
 
-    const {
-      data,
-      error
-    } =
+    const { error } =
       await db
         .from("coques")
-        .insert(payload)
-        .select();
-
+        .insert(payload);
 
     if(error){
 
-      console.error(
-        "ERREUR AJOUT :",
-        error
-      );
+      console.error(error);
 
-      showToast(
-        error.message
-      );
+      showToast(error.message);
 
       return;
-
     }
-
-
-    console.log(
-      "Produit ajouté :",
-      data
-    );
-
 
     showToast(
       "Produit ajouté avec succès."
     );
 
-
   }
 
-
-  /* =========================
-     MODIFICATION
-  ========================= */
 
   else{
 
@@ -1964,11 +1726,7 @@ async function saveProduct(e){
 
 
     const files =
-      [
-        ...document
-          .getElementById("productImages")
-          .files
-      ];
+      [...document.getElementById("productImages").files];
 
 
     if(files.length){
@@ -1979,10 +1737,9 @@ async function saveProduct(e){
 
         try{
 
-          const compressed =
-            await compressImage(file);
-
-          images.push(compressed);
+          images.push(
+            await compressImage(file)
+          );
 
         }catch(error){
 
@@ -1999,44 +1756,27 @@ async function saveProduct(e){
 
     else if(product){
 
-      /*
-        On garde les anciennes photos
-        si aucune nouvelle photo n'est choisie.
-      */
-
       payload.image_url =
         product.image_url || "";
 
     }
 
 
-    const {
-      error
-    } =
+    const { error } =
       await db
         .from("coques")
         .update(payload)
-        .eq(
-          "id",
-          editingProductId
-        );
+        .eq("id",editingProductId);
 
 
     if(error){
 
-      console.error(
-        "ERREUR MODIFICATION :",
-        error
-      );
+      console.error(error);
 
-      showToast(
-        error.message
-      );
+      showToast(error.message);
 
       return;
-
     }
-
 
     showToast(
       "Produit modifié."
@@ -2052,9 +1792,7 @@ async function saveProduct(e){
 }
 
 
-/* =========================================================
-   EDIT PRODUCT
-========================================================= */
+/* EDIT */
 
 function editProduct(id){
 
@@ -2065,7 +1803,6 @@ function editProduct(id){
         String(id)
     );
 
-
   if(!product){
 
     showToast(
@@ -2073,18 +1810,14 @@ function editProduct(id){
     );
 
     return;
-
   }
-
 
   openProductModal(product);
 
 }
 
 
-/* =========================================================
-   DELETE PRODUCT
-========================================================= */
+/* DELETE */
 
 async function deleteProduct(id){
 
@@ -2095,7 +1828,6 @@ async function deleteProduct(id){
         String(id)
     );
 
-
   if(!product){
 
     showToast(
@@ -2103,7 +1835,6 @@ async function deleteProduct(id){
     );
 
     return;
-
   }
 
 
@@ -2112,30 +1843,21 @@ async function deleteProduct(id){
       `Supprimer "${product.nom || "ce produit"}" ?`
     );
 
-
   if(!confirmed){
     return;
   }
 
 
-  const {
-    error
-  } =
+  const { error } =
     await db
       .from("coques")
       .delete()
-      .eq(
-        "id",
-        id
-      );
+      .eq("id",id);
 
 
   if(error){
 
-    console.error(
-      "ERREUR SUPPRESSION :",
-      error
-    );
+    console.error(error);
 
     showToast(
       "Impossible de supprimer : " +
@@ -2143,7 +1865,6 @@ async function deleteProduct(id){
     );
 
     return;
-
   }
 
 
@@ -2151,47 +1872,42 @@ async function deleteProduct(id){
     "Produit supprimé."
   );
 
-
   await loadProducts();
+
+  await loadOrders();
 
 }
 
 
-/* =========================================================
-   LOAD ORDERS
-========================================================= */
+/* ORDERS */
 
 async function loadOrders(){
 
   const list =
     document.getElementById("ordersList");
 
+  list.innerHTML = `
+    <div class="empty">
+      Chargement des commandes...
+    </div>
+  `;
 
-  const {
-    data,
-    error
-  } =
+
+  const { data,error } =
     await db
       .from("commandes")
-      .select("*")
-      .order(
-        "created_at",
-        {
-          ascending:false
-        }
-      );
+      .select("*");
+
+
+  console.log("COMMANDES :",data);
+  console.log("ERREUR COMMANDES :",error);
 
 
   if(error){
 
-    console.error(
-      "ERREUR COMMANDES :",
-      error
-    );
-
     list.innerHTML = `
       <div class="empty">
-        Impossible de charger les commandes.
+        ❌ Impossible de charger les commandes.
         <br><br>
         <small>
           ${escapeHTML(error.message)}
@@ -2200,12 +1916,20 @@ async function loadOrders(){
     `;
 
     return;
-
   }
 
 
-  const orders =
-    data || [];
+  orders = Array.isArray(data) ? data : [];
+
+
+  orders.sort((a,b) => {
+
+    return String(b.created_at || "")
+      .localeCompare(
+        String(a.created_at || "")
+      );
+
+  });
 
 
   document
@@ -2214,23 +1938,84 @@ async function loadOrders(){
       orders.length;
 
 
-  if(!orders.length){
+  renderOrders();
+
+}
+
+
+function renderOrders(){
+
+  const list =
+    document.getElementById("ordersList");
+
+  const search =
+    document
+      .getElementById("orderSearch")
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  const filtered =
+    orders.filter(order => {
+
+      const product =
+        products.find(
+          p =>
+            String(p.id) ===
+            String(order.coque_id)
+        );
+
+
+      const text = [
+
+        order.id,
+        order.nom,
+        order.prenom,
+        order.telephone,
+        order.phone,
+        order.adresse,
+        order.wilaya,
+        order.modele,
+
+        product?.nom,
+        product?.categorie
+
+      ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+
+
+      return text.includes(search);
+
+    });
+
+
+  if(!filtered.length){
 
     list.innerHTML = `
       <div class="empty">
-        Aucune commande.
+        Aucune commande trouvée.
       </div>
     `;
 
     return;
-
   }
 
 
   list.innerHTML =
-    orders.map(order => {
+    filtered.map(order => {
 
-      const name =
+      const product =
+        products.find(
+          p =>
+            String(p.id) ===
+            String(order.coque_id)
+        );
+
+
+      const clientName =
         [
           order.prenom,
           order.nom
@@ -2240,10 +2025,47 @@ async function loadOrders(){
         "Client";
 
 
+      const image =
+        product
+        ? getFirstImage(product)
+        : "";
+
+
+      const productName =
+        product?.nom ||
+        order.produit_nom ||
+        "Produit supprimé ou introuvable";
+
+
+      const productPrice =
+        product?.prix ??
+        order.prix_unitaire ??
+        "";
+
+
+      const quantity =
+        Number(order.quantite || 1);
+
+
       const total =
         order.total ??
         order.prix_total ??
         order.montant_total ??
+        (
+          productPrice !== ""
+          ?
+          Number(productPrice) * quantity
+          :
+          ""
+        );
+
+
+      const date =
+        order.created_at
+        ?
+        new Date(order.created_at)
+          .toLocaleString("fr-FR")
+        :
         "";
 
 
@@ -2259,10 +2081,17 @@ async function loadOrders(){
                 Commande #${escapeHTML(order.id)}
               </div>
 
-              <div class="order-info">
-                Client :
-                ${escapeHTML(name)}
-              </div>
+              ${
+                date
+                ?
+                `
+                <div class="order-date">
+                  ${escapeHTML(date)}
+                </div>
+                `
+                :
+                ""
+              }
 
             </div>
 
@@ -2272,6 +2101,7 @@ async function loadOrders(){
               ?
               `
               <div class="order-total">
+                Total :
                 ${formatPrice(total)}
               </div>
               `
@@ -2284,20 +2114,131 @@ async function loadOrders(){
 
           <div class="order-info">
 
-            Téléphone :
-            ${escapeHTML(order.telephone || order.phone || "—")}
+            <strong>Client :</strong>
+            ${escapeHTML(clientName)}
 
             <br>
 
-            Wilaya :
-            ${escapeHTML(order.wilaya || "—")}
-
-            <br>
-
-            Adresse :
-            ${escapeHTML(order.adresse || "—")}
+            <strong>Téléphone :</strong>
+            ${escapeHTML(
+              order.telephone ||
+              order.phone ||
+              "—"
+            )}
 
           </div>
+
+
+          <div class="order-product">
+
+            <div class="order-product-image">
+
+              ${
+                image
+                ?
+                `
+                <img
+                  src="${escapeHTML(image)}"
+                  alt="${escapeHTML(productName)}"
+                >
+                `
+                :
+                `
+                <div style="
+                  width:100%;
+                  height:100%;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  color:#9c858e;
+                  font-size:12px;
+                  text-align:center;
+                  padding:8px;
+                ">
+                  Pas de photo
+                </div>
+                `
+              }
+
+            </div>
+
+
+            <div class="order-product-info">
+
+              <div class="order-product-name">
+                ${escapeHTML(productName)}
+              </div>
+
+
+              <div class="order-product-model">
+
+                Modèle choisi :
+                <strong>
+                  ${escapeHTML(
+                    order.modele || "—"
+                  )}
+                </strong>
+
+              </div>
+
+
+              ${
+                productPrice !== ""
+                ?
+                `
+                <div class="order-product-price">
+                  ${formatPrice(productPrice)}
+                </div>
+                `
+                :
+                ""
+              }
+
+
+              <div class="order-quantity">
+
+                Quantité :
+                ${escapeHTML(quantity)}
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="order-delivery">
+
+            <strong>Livraison :</strong>
+
+            ${escapeHTML(
+              order.livraison ||
+              "—"
+            )}
+
+            <br>
+
+            <strong>Adresse :</strong>
+
+            ${escapeHTML(
+              order.adresse ||
+              "—"
+            )}
+
+          </div>
+
+
+          ${
+            order.statut
+            ?
+            `
+            <div class="order-status">
+              ${escapeHTML(order.statut)}
+            </div>
+            `
+            :
+            ""
+          }
 
         </div>
 
@@ -2308,9 +2249,15 @@ async function loadOrders(){
 }
 
 
-/* =========================================================
-   START
-========================================================= */
+document
+.getElementById("orderSearch")
+.addEventListener(
+  "input",
+  renderOrders
+);
+
+
+/* START */
 
 checkSession();
 
@@ -2318,4 +2265,3 @@ checkSession();
 
 </body>
 </html>
-```
