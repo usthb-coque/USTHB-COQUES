@@ -407,6 +407,7 @@ button{cursor:pointer}
 
 .order-product-info{
   min-width:0;
+  flex:1;
 }
 
 .order-product-name{
@@ -451,6 +452,12 @@ button{cursor:pointer}
   border-radius:12px;
   color:#75616a;
   font-size:14px;
+}
+
+.order-products{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .modal{
@@ -654,252 +661,254 @@ button{cursor:pointer}
 
 <section id="app" class="app hidden">
 
-  <header class="topbar">
+<header class="topbar">
 
-    <div class="brand">
-      USTHB CASES
+  <div class="brand">
+    USTHB CASES
+  </div>
+
+  <button id="logoutBtn" class="logout">
+    Déconnexion
+  </button>
+
+</header>
+
+
+<div class="layout">
+
+<aside class="sidebar">
+
+  <button class="nav-btn active" data-page="dashboard">
+    📊 Tableau de bord
+  </button>
+
+  <button class="nav-btn" data-page="products">
+    📦 Produits
+  </button>
+
+  <button class="nav-btn" data-page="orders">
+    🛒 Commandes
+  </button>
+
+</aside>
+
+
+<main class="content">
+
+<section id="dashboardPage">
+
+  <h1 class="page-title">
+    Tableau de bord
+  </h1>
+
+  <p class="page-subtitle">
+    Bienvenue dans ton espace USTHB CASES.
+  </p>
+
+  <div class="stats">
+
+    <div class="stat">
+      <div id="statProducts" class="stat-number">0</div>
+      <div class="stat-label">Produits</div>
     </div>
 
-    <button id="logoutBtn" class="logout">
-      Déconnexion
-    </button>
+    <div class="stat">
+      <div id="statOrders" class="stat-number">0</div>
+      <div class="stat-label">Commandes</div>
+    </div>
 
-  </header>
-
-
-  <div class="layout">
-
-    <aside class="sidebar">
-
-      <button class="nav-btn active" data-page="dashboard">
-        📊 Tableau de bord
-      </button>
-
-      <button class="nav-btn" data-page="products">
-        📦 Produits
-      </button>
-
-      <button class="nav-btn" data-page="orders">
-        🛒 Commandes
-      </button>
-
-    </aside>
-
-
-    <main class="content">
-
-      <section id="dashboardPage">
-
-        <h1 class="page-title">
-          Tableau de bord
-        </h1>
-
-        <p class="page-subtitle">
-          Bienvenue dans ton espace USTHB CASES.
-        </p>
-
-        <div class="stats">
-
-          <div class="stat">
-            <div id="statProducts" class="stat-number">0</div>
-            <div class="stat-label">Produits</div>
-          </div>
-
-          <div class="stat">
-            <div id="statOrders" class="stat-number">0</div>
-            <div class="stat-label">Commandes</div>
-          </div>
-
-          <div class="stat">
-            <div id="statSold" class="stat-number">0</div>
-            <div class="stat-label">Produits épuisés</div>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section id="productsPage" class="hidden">
-
-        <h1 class="page-title">
-          Produits
-        </h1>
-
-        <p class="page-subtitle">
-          Gère les produits affichés sur ton site.
-        </p>
-
-        <div class="toolbar">
-
-          <input
-            id="productSearch"
-            class="search"
-            type="search"
-            placeholder="Rechercher un produit..."
-          >
-
-          <button id="addProductBtn" class="add-btn">
-            + Ajouter un produit
-          </button>
-
-        </div>
-
-        <div id="productsGrid" class="products-grid">
-
-          <div class="empty">
-            Chargement des produits...
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section id="ordersPage" class="hidden">
-
-        <h1 class="page-title">
-          Commandes
-        </h1>
-
-        <p class="page-subtitle">
-          Tu peux voir exactement quel produit a été commandé.
-        </p>
-
-        <div class="toolbar">
-
-          <input
-            id="orderSearch"
-            class="search"
-            type="search"
-            placeholder="Rechercher client, téléphone, produit..."
-          >
-
-        </div>
-
-        <div id="ordersList" class="orders-list">
-
-          <div class="empty">
-            Chargement des commandes...
-          </div>
-
-        </div>
-
-      </section>
-
-    </main>
+    <div class="stat">
+      <div id="statSold" class="stat-number">0</div>
+      <div class="stat-label">Produits épuisés</div>
+    </div>
 
   </div>
 
 </section>
 
 
+<section id="productsPage" class="hidden">
+
+  <h1 class="page-title">Produits</h1>
+
+  <p class="page-subtitle">
+    Gère les produits affichés sur ton site.
+  </p>
+
+  <div class="toolbar">
+
+    <input
+      id="productSearch"
+      class="search"
+      type="search"
+      placeholder="Rechercher un produit..."
+    >
+
+    <button id="addProductBtn" class="add-btn">
+      + Ajouter un produit
+    </button>
+
+  </div>
+
+  <div id="productsGrid" class="products-grid">
+
+    <div class="empty">
+      Chargement des produits...
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="ordersPage" class="hidden">
+
+  <h1 class="page-title">
+    Commandes
+  </h1>
+
+  <p class="page-subtitle">
+    Chaque commande affiche les produits réellement choisis.
+  </p>
+
+  <div class="toolbar">
+
+    <input
+      id="orderSearch"
+      class="search"
+      type="search"
+      placeholder="Rechercher client, téléphone, produit..."
+    >
+
+  </div>
+
+  <div id="ordersList" class="orders-list">
+
+    <div class="empty">
+      Chargement des commandes...
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+</div>
+</section>
+
+
+<!-- PRODUCT MODAL -->
+
 <div id="productModal" class="modal">
 
-  <div class="modal-card">
+<div class="modal-card">
 
-    <div class="modal-head">
+  <div class="modal-head">
 
-      <div id="modalTitle" class="modal-title">
-        Ajouter un produit
+    <div id="modalTitle" class="modal-title">
+      Ajouter un produit
+    </div>
+
+    <button id="closeModal" class="close">
+      ×
+    </button>
+
+  </div>
+
+
+  <form id="productForm">
+
+    <input id="productId" type="hidden">
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label>Nom du produit</label>
+        <input id="productName" required>
       </div>
 
-      <button id="closeModal" class="close">
-        ×
-      </button>
+      <div class="field">
+        <label>Prix (DA)</label>
+        <input id="productPrice" type="number" min="0" required>
+      </div>
+
+      <div class="field">
+
+        <label>Catégorie</label>
+
+        <select id="productCategory">
+          <option value="Cases">Cases</option>
+          <option value="Accessoires">Accessoires</option>
+          <option value="Ventouses">Ventouses</option>
+          <option value="iPad">iPad</option>
+        </select>
+
+      </div>
+
+      <div class="field">
+
+        <label>Modèles</label>
+
+        <input
+          id="productModels"
+          placeholder="iPhone 13 || iPhone 13 Pro"
+        >
+
+      </div>
+
+      <div class="field full">
+
+        <label>Photos</label>
+
+        <input
+          id="productImages"
+          type="file"
+          accept="image/*"
+          multiple
+        >
+
+        <div id="imagesPreview" class="images-preview"></div>
+
+      </div>
+
+      <div class="field full">
+
+        <label>État</label>
+
+        <select id="productSold">
+
+          <option value="false">Disponible</option>
+          <option value="true">Épuisé</option>
+
+        </select>
+
+      </div>
 
     </div>
 
 
-    <form id="productForm">
+    <div class="modal-actions">
 
-      <input id="productId" type="hidden">
+      <button
+        type="button"
+        id="cancelModal"
+        class="cancel-btn"
+      >
+        Annuler
+      </button>
 
-      <div class="form-grid">
+      <button
+        type="submit"
+        class="save-btn"
+      >
+        Enregistrer
+      </button>
 
-        <div class="field">
-          <label>Nom du produit</label>
-          <input id="productName" required>
-        </div>
+    </div>
 
-        <div class="field">
-          <label>Prix (DA)</label>
-          <input id="productPrice" type="number" min="0" required>
-        </div>
+  </form>
 
-        <div class="field">
-
-          <label>Catégorie</label>
-
-          <select id="productCategory">
-
-            <option value="Cases">Cases</option>
-            <option value="Accessoires">Accessoires</option>
-            <option value="Ventouses">Ventouses</option>
-            <option value="iPad">iPad</option>
-
-          </select>
-
-        </div>
-
-        <div class="field">
-
-          <label>Modèles</label>
-
-          <input
-            id="productModels"
-            placeholder="iPhone 13 || iPhone 13 Pro"
-          >
-
-        </div>
-
-        <div class="field full">
-
-          <label>Photos</label>
-
-          <input
-            id="productImages"
-            type="file"
-            accept="image/*"
-            multiple
-          >
-
-          <div id="imagesPreview" class="images-preview"></div>
-
-        </div>
-
-        <div class="field full">
-
-          <label>État</label>
-
-          <select id="productSold">
-
-            <option value="false">Disponible</option>
-            <option value="true">Épuisé</option>
-
-          </select>
-
-        </div>
-
-      </div>
-
-
-      <div class="modal-actions">
-
-        <button type="button" id="cancelModal" class="cancel-btn">
-          Annuler
-        </button>
-
-        <button type="submit" class="save-btn">
-          Enregistrer
-        </button>
-
-      </div>
-
-    </form>
-
-  </div>
-
+</div>
 </div>
 
 
@@ -916,16 +925,19 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
   "sb_publishable_nWuy8_mRLoX41Mn7FrRC9g_baSwOBeh";
 
-const db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+const db =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
 
 
 let products = [];
 let orders = [];
 let editingProductId = null;
 
+
+/* HELPERS */
 
 function escapeHTML(value){
 
@@ -939,26 +951,10 @@ function escapeHTML(value){
 }
 
 
-function showToast(message){
-
-  const toast =
-    document.getElementById("toast");
-
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-  },3000);
-
-}
-
-
 function formatPrice(value){
 
-  const n = Number(value || 0);
-
-  return n.toLocaleString("fr-FR") + " DA";
+  return Number(value || 0)
+    .toLocaleString("fr-FR") + " DA";
 
 }
 
@@ -984,55 +980,88 @@ function getFirstImage(product){
 }
 
 
+function showToast(message){
+
+  const toast =
+    document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  },3000);
+
+}
+
+
 /* LOGIN */
 
 document
 .getElementById("loginForm")
-.addEventListener("submit",async function(e){
+.addEventListener(
+  "submit",
+  async function(e){
 
-  e.preventDefault();
+    e.preventDefault();
 
-  const email =
-    document.getElementById("loginEmail").value.trim();
+    const email =
+      document
+        .getElementById("loginEmail")
+        .value
+        .trim();
 
-  const password =
-    document.getElementById("loginPassword").value;
+    const password =
+      document
+        .getElementById("loginPassword")
+        .value;
 
-  const errorBox =
-    document.getElementById("loginError");
+    const errorBox =
+      document.getElementById("loginError");
 
-  errorBox.style.display = "none";
+    errorBox.style.display = "none";
 
-  const { data,error } =
-    await db.auth.signInWithPassword({
-      email,
-      password
-    });
 
-  if(error){
+    const {data,error} =
+      await db.auth.signInWithPassword({
+        email,
+        password
+      });
 
-    console.error(error);
 
-    errorBox.textContent =
-      error.message || "Erreur de connexion.";
+    if(error){
 
-    errorBox.style.display = "block";
+      console.error(error);
 
-    return;
+      errorBox.textContent =
+        error.message ||
+        "Erreur de connexion.";
+
+      errorBox.style.display =
+        "block";
+
+      return;
+    }
+
+
+    console.log(
+      "Connexion réussie",
+      data
+    );
+
+    showApp();
+
   }
-
-  console.log("Connexion réussie",data);
-
-  showApp();
-
-});
+);
 
 
 async function checkSession(){
 
   const {
     data:{session}
-  } = await db.auth.getSession();
+  } =
+    await db.auth.getSession();
+
 
   if(session){
     showApp();
@@ -1046,12 +1075,14 @@ async function checkSession(){
 function showLogin(){
 
   document
-  .getElementById("loginPage")
-  .classList.remove("hidden");
+    .getElementById("loginPage")
+    .classList
+    .remove("hidden");
 
   document
-  .getElementById("app")
-  .classList.add("hidden");
+    .getElementById("app")
+    .classList
+    .add("hidden");
 
 }
 
@@ -1059,12 +1090,15 @@ function showLogin(){
 async function showApp(){
 
   document
-  .getElementById("loginPage")
-  .classList.add("hidden");
+    .getElementById("loginPage")
+    .classList
+    .add("hidden");
 
   document
-  .getElementById("app")
-  .classList.remove("hidden");
+    .getElementById("app")
+    .classList
+    .remove("hidden");
+
 
   await loadProducts();
   await loadOrders();
@@ -1074,13 +1108,16 @@ async function showApp(){
 
 document
 .getElementById("logoutBtn")
-.addEventListener("click",async function(){
+.addEventListener(
+  "click",
+  async function(){
 
-  await db.auth.signOut();
+    await db.auth.signOut();
 
-  showLogin();
+    showLogin();
 
-});
+  }
+);
 
 
 /* NAVIGATION */
@@ -1089,29 +1126,50 @@ document
 .querySelectorAll(".nav-btn")
 .forEach(button => {
 
-  button.addEventListener("click",function(){
+  button.addEventListener(
+    "click",
+    function(){
 
-    document
-    .querySelectorAll(".nav-btn")
-    .forEach(x => x.classList.remove("active"));
+      document
+        .querySelectorAll(".nav-btn")
+        .forEach(x =>
+          x.classList.remove("active")
+        );
 
-    this.classList.add("active");
+      this.classList.add("active");
 
-    const page = this.dataset.page;
+      const page =
+        this.dataset.page;
 
-    document
-    .getElementById("dashboardPage")
-    .classList.toggle("hidden",page !== "dashboard");
 
-    document
-    .getElementById("productsPage")
-    .classList.toggle("hidden",page !== "products");
+      document
+        .getElementById("dashboardPage")
+        .classList
+        .toggle(
+          "hidden",
+          page !== "dashboard"
+        );
 
-    document
-    .getElementById("ordersPage")
-    .classList.toggle("hidden",page !== "orders");
 
-  });
+      document
+        .getElementById("productsPage")
+        .classList
+        .toggle(
+          "hidden",
+          page !== "products"
+        );
+
+
+      document
+        .getElementById("ordersPage")
+        .classList
+        .toggle(
+          "hidden",
+          page !== "orders"
+        );
+
+    }
+  );
 
 });
 
@@ -1121,7 +1179,10 @@ document
 async function loadProducts(){
 
   const grid =
-    document.getElementById("productsGrid");
+    document.getElementById(
+      "productsGrid"
+    );
+
 
   grid.innerHTML = `
     <div class="empty">
@@ -1129,13 +1190,33 @@ async function loadProducts(){
     </div>
   `;
 
-  const { data,error } =
+
+  /*
+    IMPORTANT :
+    On utilise *.
+    Il n'y a plus de "category"
+    demandé dans la requête.
+  */
+
+  const {
+    data,
+    error
+  } =
     await db
       .from("coques")
       .select("*");
 
-  console.log("COQUES :",data);
-  console.log("ERREUR :",error);
+
+  console.log(
+    "COQUES:",
+    data
+  );
+
+  console.log(
+    "ERREUR COQUES:",
+    error
+  );
+
 
   if(error){
 
@@ -1152,16 +1233,20 @@ async function loadProducts(){
     return;
   }
 
-  products = Array.isArray(data) ? data : [];
 
-  products.sort((a,b) => {
+  products =
+    Array.isArray(data)
+    ? data
+    : [];
 
-    return String(b.created_at || "")
+
+  products.sort((a,b) =>
+    String(b.created_at || "")
       .localeCompare(
         String(a.created_at || "")
-      );
+      )
+  );
 
-  });
 
   renderProducts();
   updateStats();
@@ -1172,14 +1257,20 @@ async function loadProducts(){
 function renderProducts(){
 
   const grid =
-    document.getElementById("productsGrid");
+    document.getElementById(
+      "productsGrid"
+    );
+
 
   const search =
     document
-      .getElementById("productSearch")
+      .getElementById(
+        "productSearch"
+      )
       .value
       .toLowerCase()
       .trim();
+
 
   const filtered =
     products.filter(product => {
@@ -1187,13 +1278,16 @@ function renderProducts(){
       const text = [
 
         product.nom,
+
         product.categorie,
+
         product.modele
 
       ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
+
 
       return text.includes(search);
 
@@ -1230,7 +1324,8 @@ function renderProducts(){
         getFirstImage(product);
 
       const category =
-        product.categorie || "Cases";
+        product.categorie ||
+        "Cases";
 
       const models =
         product.modele ||
@@ -1278,7 +1373,9 @@ function renderProducts(){
           <div class="product-body">
 
             <div class="product-name">
-              ${escapeHTML(product.nom || "Sans nom")}
+              ${escapeHTML(
+                product.nom || "Sans nom"
+              )}
             </div>
 
             <div class="product-price">
@@ -1327,14 +1424,19 @@ function renderProducts(){
 
 document
 .getElementById("productSearch")
-.addEventListener("input",renderProducts);
+.addEventListener(
+  "input",
+  renderProducts
+);
 
 
 function updateStats(){
 
   document
-  .getElementById("statProducts")
-  .textContent = products.length;
+    .getElementById("statProducts")
+    .textContent =
+      products.length;
+
 
   const sold =
     products.filter(product =>
@@ -1342,9 +1444,11 @@ function updateStats(){
       product.epuise === "true"
     ).length;
 
+
   document
-  .getElementById("statSold")
-  .textContent = sold;
+    .getElementById("statSold")
+    .textContent =
+      sold;
 
 }
 
@@ -1354,57 +1458,64 @@ function updateStats(){
 function openProductModal(product=null){
 
   editingProductId =
-    product ? product.id : null;
-
-  document
-  .getElementById("productModal")
-  .classList.add("show");
-
-  document
-  .getElementById("modalTitle")
-  .textContent =
     product
-    ? "Modifier le produit"
-    : "Ajouter un produit";
+    ? product.id
+    : null;
+
 
   document
-  .getElementById("productId")
-  .value =
-    product?.id || "";
+    .getElementById("productModal")
+    .classList
+    .add("show");
+
 
   document
-  .getElementById("productName")
-  .value =
-    product?.nom || "";
+    .getElementById("modalTitle")
+    .textContent =
+      product
+      ? "Modifier le produit"
+      : "Ajouter un produit";
+
 
   document
-  .getElementById("productPrice")
-  .value =
-    product?.prix ?? "";
+    .getElementById("productName")
+    .value =
+      product?.nom || "";
+
 
   document
-  .getElementById("productCategory")
-  .value =
-    product?.categorie || "Cases";
+    .getElementById("productPrice")
+    .value =
+      product?.prix ?? "";
+
 
   document
-  .getElementById("productModels")
-  .value =
-    product?.modele || "";
+    .getElementById("productCategory")
+    .value =
+      product?.categorie || "Cases";
+
 
   document
-  .getElementById("productSold")
-  .value =
-    (
-      product?.epuise === true ||
-      product?.epuise === "true"
-    )
-    ? "true"
-    : "false";
+    .getElementById("productModels")
+    .value =
+      product?.modele || "";
+
 
   document
-  .getElementById("productImages")
-  .value = "";
+    .getElementById("productSold")
+    .value =
+      (
+        product?.epuise === true ||
+        product?.epuise === "true"
+      )
+      ? "true"
+      : "false";
+
+
+  document
+    .getElementById("productImages")
+    .value = "";
+
 
   renderImagePreview(
     getImages(product)
@@ -1416,8 +1527,9 @@ function openProductModal(product=null){
 function closeProductModal(){
 
   document
-  .getElementById("productModal")
-  .classList.remove("show");
+    .getElementById("productModal")
+    .classList
+    .remove("show");
 
   editingProductId = null;
 
@@ -1456,13 +1568,16 @@ document
   "change",
   async function(){
 
-    const files = [...this.files];
+    const files =
+      [...this.files];
 
     if(!files.length){
       return;
     }
 
+
     const urls = [];
+
 
     for(const file of files){
 
@@ -1481,6 +1596,7 @@ document
 
     }
 
+
     renderImagePreview(urls);
 
   }
@@ -1490,15 +1606,18 @@ document
 function renderImagePreview(images){
 
   const box =
-    document.getElementById("imagesPreview");
+    document.getElementById(
+      "imagesPreview"
+    );
+
 
   if(!images.length){
 
     box.innerHTML = "";
 
     return;
-
   }
+
 
   box.innerHTML =
     images.map(url => `
@@ -1513,81 +1632,112 @@ function renderImagePreview(images){
 
 function compressImage(file){
 
-  return new Promise((resolve,reject) => {
+  return new Promise(
+    (resolve,reject) => {
 
-    const reader =
-      new FileReader();
+      const reader =
+        new FileReader();
 
-    reader.onload = function(){
 
-      const img = new Image();
+      reader.onload =
+        function(){
 
-      img.onload = function(){
+          const img =
+            new Image();
 
-        const maxSize = 1000;
 
-        let width = img.width;
-        let height = img.height;
+          img.onload =
+            function(){
 
-        if(width > maxSize){
+              const maxSize = 1000;
 
-          height =
-            Math.round(
-              height * maxSize / width
-            );
+              let width =
+                img.width;
 
-          width = maxSize;
+              let height =
+                img.height;
 
-        }
 
-        if(height > maxSize){
+              if(width > maxSize){
 
-          width =
-            Math.round(
-              width * maxSize / height
-            );
+                height =
+                  Math.round(
+                    height *
+                    maxSize /
+                    width
+                  );
 
-          height = maxSize;
+                width =
+                  maxSize;
 
-        }
+              }
 
-        const canvas =
-          document.createElement("canvas");
 
-        canvas.width = width;
-        canvas.height = height;
+              if(height > maxSize){
 
-        const ctx =
-          canvas.getContext("2d");
+                width =
+                  Math.round(
+                    width *
+                    maxSize /
+                    height
+                  );
 
-        ctx.drawImage(
-          img,
-          0,
-          0,
-          width,
-          height
-        );
+                height =
+                  maxSize;
 
-        resolve(
-          canvas.toDataURL(
-            "image/jpeg",
-            .78
-          )
-        );
+              }
 
-      };
 
-      img.onerror = reject;
+              const canvas =
+                document.createElement(
+                  "canvas"
+                );
 
-      img.src = reader.result;
 
-    };
+              canvas.width =
+                width;
 
-    reader.onerror = reject;
+              canvas.height =
+                height;
 
-    reader.readAsDataURL(file);
 
-  });
+              const ctx =
+                canvas.getContext("2d");
+
+
+              ctx.drawImage(
+                img,
+                0,
+                0,
+                width,
+                height
+              );
+
+
+              resolve(
+                canvas.toDataURL(
+                  "image/jpeg",
+                  .78
+                )
+              );
+
+            };
+
+
+          img.onerror = reject;
+
+          img.src =
+            reader.result;
+
+        };
+
+
+      reader.onerror = reject;
+
+      reader.readAsDataURL(file);
+
+    }
+  );
 
 }
 
@@ -1606,11 +1756,13 @@ async function saveProduct(e){
 
   e.preventDefault();
 
+
   const name =
     document
       .getElementById("productName")
       .value
       .trim();
+
 
   const price =
     Number(
@@ -1619,16 +1771,19 @@ async function saveProduct(e){
         .value
     );
 
+
   const category =
     document
       .getElementById("productCategory")
       .value;
+
 
   const models =
     document
       .getElementById("productModels")
       .value
       .trim();
+
 
   const sold =
     document
@@ -1638,7 +1793,9 @@ async function saveProduct(e){
 
   if(!name){
 
-    showToast("Entre le nom du produit.");
+    showToast(
+      "Entre le nom du produit."
+    );
 
     return;
   }
@@ -1646,140 +1803,163 @@ async function saveProduct(e){
 
   if(!Number.isFinite(price)){
 
-    showToast("Entre un prix valide.");
+    showToast(
+      "Entre un prix valide."
+    );
 
     return;
   }
 
 
+  /*
+    IMPORTANT :
+    Seulement categorie.
+    Jamais category.
+  */
+
   const payload = {
 
     nom:name,
+
     prix:price,
+
     categorie:category,
+
     modele:models,
+
     epuise:sold
 
   };
 
 
-  if(!editingProductId){
+  const files =
+    [
+      ...document
+        .getElementById(
+          "productImages"
+        )
+        .files
+    ];
 
-    const files =
-      [...document.getElementById("productImages").files];
 
-    if(files.length){
+  if(files.length){
 
-      const images = [];
+    const images = [];
 
-      for(const file of files){
 
-        try{
+    for(const file of files){
 
-          images.push(
-            await compressImage(file)
-          );
+      try{
 
-        }catch(error){
+        images.push(
+          await compressImage(file)
+        );
 
-          console.error(error);
+      }catch(error){
 
-        }
+        console.error(error);
 
       }
-
-      payload.image_url =
-        images.join("||");
 
     }
 
 
-    const { error } =
+    payload.image_url =
+      images.join("||");
+
+  }
+
+
+  /* ADD */
+
+  if(!editingProductId){
+
+    const {
+      error
+    } =
       await db
         .from("coques")
         .insert(payload);
+
 
     if(error){
 
       console.error(error);
 
-      showToast(error.message);
+      showToast(
+        "Erreur : " +
+        error.message
+      );
 
       return;
     }
 
+
     showToast(
-      "Produit ajouté avec succès."
+      "Produit ajouté avec succès ❤️"
     );
 
   }
 
 
+  /* EDIT */
+
   else{
 
-    const product =
-      products.find(
-        x =>
-          String(x.id) ===
-          String(editingProductId)
-      );
+    /*
+      Si aucune nouvelle image,
+      on garde l'ancienne.
+    */
+
+    if(
+      !files.length
+    ){
+
+      const oldProduct =
+        products.find(
+          x =>
+            String(x.id) ===
+            String(editingProductId)
+        );
 
 
-    const files =
-      [...document.getElementById("productImages").files];
+      if(oldProduct){
 
-
-    if(files.length){
-
-      const images = [];
-
-      for(const file of files){
-
-        try{
-
-          images.push(
-            await compressImage(file)
-          );
-
-        }catch(error){
-
-          console.error(error);
-
-        }
+        payload.image_url =
+          oldProduct.image_url || "";
 
       }
 
-      payload.image_url =
-        images.join("||");
-
-    }
-
-    else if(product){
-
-      payload.image_url =
-        product.image_url || "";
-
     }
 
 
-    const { error } =
+    const {
+      error
+    } =
       await db
         .from("coques")
         .update(payload)
-        .eq("id",editingProductId);
+        .eq(
+          "id",
+          editingProductId
+        );
 
 
     if(error){
 
       console.error(error);
 
-      showToast(error.message);
+      showToast(
+        "Erreur : " +
+        error.message
+      );
 
       return;
     }
 
+
     showToast(
-      "Produit modifié."
+      "Produit modifié ❤️"
     );
 
   }
@@ -1803,6 +1983,7 @@ function editProduct(id){
         String(id)
     );
 
+
   if(!product){
 
     showToast(
@@ -1811,6 +1992,7 @@ function editProduct(id){
 
     return;
   }
+
 
   openProductModal(product);
 
@@ -1828,6 +2010,7 @@ async function deleteProduct(id){
         String(id)
     );
 
+
   if(!product){
 
     showToast(
@@ -1843,12 +2026,15 @@ async function deleteProduct(id){
       `Supprimer "${product.nom || "ce produit"}" ?`
     );
 
+
   if(!confirmed){
     return;
   }
 
 
-  const { error } =
+  const {
+    error
+  } =
     await db
       .from("coques")
       .delete()
@@ -1872,6 +2058,7 @@ async function deleteProduct(id){
     "Produit supprimé."
   );
 
+
   await loadProducts();
 
   await loadOrders();
@@ -1884,7 +2071,10 @@ async function deleteProduct(id){
 async function loadOrders(){
 
   const list =
-    document.getElementById("ordersList");
+    document.getElementById(
+      "ordersList"
+    );
+
 
   list.innerHTML = `
     <div class="empty">
@@ -1893,14 +2083,24 @@ async function loadOrders(){
   `;
 
 
-  const { data,error } =
+  const {
+    data,
+    error
+  } =
     await db
       .from("commandes")
       .select("*");
 
 
-  console.log("COMMANDES :",data);
-  console.log("ERREUR COMMANDES :",error);
+  console.log(
+    "COMMANDES:",
+    data
+  );
+
+  console.log(
+    "ERREUR COMMANDES:",
+    error
+  );
 
 
   if(error){
@@ -1919,23 +2119,39 @@ async function loadOrders(){
   }
 
 
-  orders = Array.isArray(data) ? data : [];
+  orders =
+    Array.isArray(data)
+    ? data
+    : [];
 
 
-  orders.sort((a,b) => {
-
-    return String(b.created_at || "")
+  orders.sort((a,b) =>
+    String(b.created_at || "")
       .localeCompare(
         String(a.created_at || "")
-      );
+      )
+  );
 
-  });
+
+  /*
+    IMPORTANT :
+    On compte les paniers,
+    pas chaque ligne.
+  */
+
+  const uniqueOrders =
+    new Set(
+      orders.map(order =>
+        order.panier_id ||
+        String(order.id)
+      )
+    );
 
 
   document
     .getElementById("statOrders")
     .textContent =
-      orders.length;
+      uniqueOrders.size;
 
 
   renderOrders();
@@ -1943,48 +2159,133 @@ async function loadOrders(){
 }
 
 
+/*
+  Trouve le produit correspondant
+  à une ligne de commande.
+*/
+
+function getProductForOrder(order){
+
+  if(!order){
+    return null;
+  }
+
+
+  return products.find(
+    product =>
+      String(product.id) ===
+      String(order.coque_id)
+  ) || null;
+
+}
+
+
+/*
+  Regroupe les lignes par panier_id.
+*/
+
+function groupOrders(){
+
+  const groups = new Map();
+
+
+  for(const order of orders){
+
+    const key =
+      order.panier_id ||
+      "ORDER-" + String(order.id);
+
+
+    if(!groups.has(key)){
+
+      groups.set(
+        key,
+        []
+      );
+
+    }
+
+
+    groups
+      .get(key)
+      .push(order);
+
+  }
+
+
+  return [...groups.entries()]
+    .map(([panierId,items]) => ({
+      panierId,
+      items
+    }));
+
+}
+
+
 function renderOrders(){
 
   const list =
-    document.getElementById("ordersList");
+    document.getElementById(
+      "ordersList"
+    );
+
 
   const search =
     document
-      .getElementById("orderSearch")
+      .getElementById(
+        "orderSearch"
+      )
       .value
       .toLowerCase()
       .trim();
 
 
+  const groups =
+    groupOrders();
+
+
   const filtered =
-    orders.filter(order => {
+    groups.filter(group => {
 
-      const product =
-        products.find(
-          p =>
-            String(p.id) ===
-            String(order.coque_id)
-        );
+      const text =
+        group.items
+          .map(order => {
+
+            const product =
+              getProductForOrder(
+                order
+              );
 
 
-      const text = [
+            return [
 
-        order.id,
-        order.nom,
-        order.prenom,
-        order.telephone,
-        order.phone,
-        order.adresse,
-        order.wilaya,
-        order.modele,
+              order.id,
 
-        product?.nom,
-        product?.categorie
+              order.nom,
 
-      ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
+              order.prenom,
+
+              order.telephone,
+
+              order.phone,
+
+              order.adresse,
+
+              order.wilaya,
+
+              order.modele,
+
+              product?.nom,
+
+              product?.categorie
+
+            ]
+            .filter(Boolean)
+            .join(" ");
+
+          })
+          .join(" ")
+          .toLowerCase();
 
 
       return text.includes(search);
@@ -2005,68 +2306,211 @@ function renderOrders(){
 
 
   list.innerHTML =
-    filtered.map(order => {
+    filtered.map(group => {
 
-      const product =
-        products.find(
-          p =>
-            String(p.id) ===
-            String(order.coque_id)
-        );
+      const first =
+        group.items[0];
 
 
       const clientName =
         [
-          order.prenom,
-          order.nom
+          first.prenom,
+          first.nom
         ]
         .filter(Boolean)
         .join(" ") ||
         "Client";
 
 
-      const image =
-        product
-        ? getFirstImage(product)
-        : "";
-
-
-      const productName =
-        product?.nom ||
-        order.produit_nom ||
-        "Produit supprimé ou introuvable";
-
-
-      const productPrice =
-        product?.prix ??
-        order.prix_unitaire ??
-        "";
-
-
-      const quantity =
-        Number(order.quantite || 1);
-
-
-      const total =
-        order.total ??
-        order.prix_total ??
-        order.montant_total ??
-        (
-          productPrice !== ""
-          ?
-          Number(productPrice) * quantity
-          :
-          ""
-        );
-
-
       const date =
-        order.created_at
+        first.created_at
         ?
-        new Date(order.created_at)
-          .toLocaleString("fr-FR")
+        new Date(
+          first.created_at
+        ).toLocaleString("fr-FR")
         :
         "";
+
+
+      /*
+        Sous-total produits
+      */
+
+      let productsTotal = 0;
+
+
+      const productHTML =
+        group.items.map(order => {
+
+          const product =
+            getProductForOrder(
+              order
+            );
+
+
+          const quantity =
+            Number(
+              order.quantite || 1
+            );
+
+
+          const price =
+            product
+            ? Number(
+                product.prix || 0
+              )
+            : Number(
+                order.prix_unitaire || 0
+              );
+
+
+          productsTotal +=
+            price * quantity;
+
+
+          const image =
+            product
+            ?
+            getFirstImage(product)
+            :
+            "";
+
+
+          const productName =
+            product?.nom ||
+            order.produit_nom ||
+            "Produit supprimé ou introuvable";
+
+
+          const model =
+            order.modele ||
+            "—";
+
+
+          return `
+
+            <div class="order-product">
+
+              <div class="order-product-image">
+
+                ${
+                  image
+                  ?
+                  `
+                  <img
+                    src="${escapeHTML(image)}"
+                    alt="${escapeHTML(productName)}"
+                  >
+                  `
+                  :
+                  `
+                  <div style="
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    color:#9c858e;
+                    font-size:12px;
+                    text-align:center;
+                    padding:8px;
+                  ">
+                    ${
+                      product
+                      ? "Pas de photo"
+                      : "Produit supprimé"
+                    }
+                  </div>
+                  `
+                }
+
+              </div>
+
+
+              <div class="order-product-info">
+
+                <div class="order-product-name">
+                  ${escapeHTML(productName)}
+                </div>
+
+
+                <div class="order-product-model">
+
+                  Modèle choisi :
+                  <strong>
+                    ${escapeHTML(model)}
+                  </strong>
+
+                </div>
+
+
+                <div class="order-product-price">
+
+                  ${
+                    price > 0
+                    ?
+                    formatPrice(price)
+                    :
+                    "Prix inconnu"
+                  }
+
+                </div>
+
+
+                <div class="order-quantity">
+
+                  Quantité :
+                  ${escapeHTML(quantity)}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }).join("");
+
+
+      /*
+        Livraison :
+        on utilise la ligne enregistrée
+        dans la commande.
+      */
+
+      const deliveryText =
+        first.livraison ||
+        "—";
+
+
+      /*
+        Si USTHB = 0.
+        Sinon on essaie de retrouver
+        le prix à la fin de la chaîne.
+      */
+
+      let deliveryPrice = 0;
+
+
+      const deliveryMatch =
+        String(deliveryText)
+          .match(/(\d+)\s*DA\s*$/);
+
+
+      if(deliveryMatch){
+
+        deliveryPrice =
+          Number(
+            deliveryMatch[1]
+          );
+
+      }
+
+
+      const grandTotal =
+        productsTotal +
+        deliveryPrice;
 
 
       return `
@@ -2078,7 +2522,8 @@ function renderOrders(){
             <div>
 
               <div class="order-id">
-                Commande #${escapeHTML(order.id)}
+                Commande
+                #${escapeHTML(group.panierId)}
               </div>
 
               ${
@@ -2096,18 +2541,12 @@ function renderOrders(){
             </div>
 
 
-            ${
-              total !== ""
-              ?
-              `
-              <div class="order-total">
-                Total :
-                ${formatPrice(total)}
-              </div>
-              `
-              :
-              ""
-            }
+            <div class="order-total">
+
+              Total :
+              ${formatPrice(grandTotal)}
+
+            </div>
 
           </div>
 
@@ -2121,88 +2560,17 @@ function renderOrders(){
 
             <strong>Téléphone :</strong>
             ${escapeHTML(
-              order.telephone ||
-              order.phone ||
+              first.telephone ||
+              first.phone ||
               "—"
             )}
 
           </div>
 
 
-          <div class="order-product">
+          <div class="order-products">
 
-            <div class="order-product-image">
-
-              ${
-                image
-                ?
-                `
-                <img
-                  src="${escapeHTML(image)}"
-                  alt="${escapeHTML(productName)}"
-                >
-                `
-                :
-                `
-                <div style="
-                  width:100%;
-                  height:100%;
-                  display:flex;
-                  align-items:center;
-                  justify-content:center;
-                  color:#9c858e;
-                  font-size:12px;
-                  text-align:center;
-                  padding:8px;
-                ">
-                  Pas de photo
-                </div>
-                `
-              }
-
-            </div>
-
-
-            <div class="order-product-info">
-
-              <div class="order-product-name">
-                ${escapeHTML(productName)}
-              </div>
-
-
-              <div class="order-product-model">
-
-                Modèle choisi :
-                <strong>
-                  ${escapeHTML(
-                    order.modele || "—"
-                  )}
-                </strong>
-
-              </div>
-
-
-              ${
-                productPrice !== ""
-                ?
-                `
-                <div class="order-product-price">
-                  ${formatPrice(productPrice)}
-                </div>
-                `
-                :
-                ""
-              }
-
-
-              <div class="order-quantity">
-
-                Quantité :
-                ${escapeHTML(quantity)}
-
-              </div>
-
-            </div>
+            ${productHTML}
 
           </div>
 
@@ -2212,8 +2580,7 @@ function renderOrders(){
             <strong>Livraison :</strong>
 
             ${escapeHTML(
-              order.livraison ||
-              "—"
+              deliveryText
             )}
 
             <br>
@@ -2221,7 +2588,7 @@ function renderOrders(){
             <strong>Adresse :</strong>
 
             ${escapeHTML(
-              order.adresse ||
+              first.adresse ||
               "—"
             )}
 
@@ -2229,11 +2596,11 @@ function renderOrders(){
 
 
           ${
-            order.statut
+            first.statut
             ?
             `
             <div class="order-status">
-              ${escapeHTML(order.statut)}
+              ${escapeHTML(first.statut)}
             </div>
             `
             :
