@@ -3,14 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>USTHB CASES</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -19,10 +24,27 @@ body{
   color:#281d22;
 }
 
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-img{max-width:100%}
-.hidden{display:none!important}
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+img{
+  max-width:100%;
+}
+
+.hidden{
+  display:none!important;
+}
+
+
+/* ================= HEADER ================= */
 
 header{
   position:sticky;
@@ -94,6 +116,9 @@ header{
   margin-left:4px;
 }
 
+
+/* ================= HERO ================= */
+
 .hero{
   max-width:1250px;
   margin:auto;
@@ -118,7 +143,9 @@ header{
   color:#2d2025;
 }
 
-.hero h1 span{color:#d94f86}
+.hero h1 span{
+  color:#d94f86;
+}
 
 .hero p{
   max-width:650px;
@@ -126,6 +153,9 @@ header{
   line-height:1.7;
   margin:22px 0 0;
 }
+
+
+/* ================= CATEGORIES ================= */
 
 .categories{
   max-width:1250px;
@@ -151,6 +181,9 @@ header{
   border-color:#d94f86;
   color:#fff;
 }
+
+
+/* ================= PRODUCTS ================= */
 
 .section{
   max-width:1250px;
@@ -207,7 +240,9 @@ header{
   font-weight:700;
 }
 
-.product-info{padding:17px}
+.product-info{
+  padding:17px;
+}
 
 .product-name{
   font-weight:800;
@@ -244,6 +279,9 @@ header{
   cursor:not-allowed;
 }
 
+
+/* ================= MODALS ================= */
+
 .modal{
   position:fixed;
   inset:0;
@@ -255,7 +293,9 @@ header{
   padding:18px;
 }
 
-.modal.show{display:flex}
+.modal.show{
+  display:flex;
+}
 
 .modal-card{
   width:100%;
@@ -327,7 +367,9 @@ header{
   line-height:1.7;
 }
 
-.field{margin-top:16px}
+.field{
+  margin-top:16px;
+}
 
 .field label{
   display:block;
@@ -413,7 +455,9 @@ header{
   min-width:0;
 }
 
-.cart-item-name{font-weight:800}
+.cart-item-name{
+  font-weight:800;
+}
 
 .cart-item-model{
   color:#8b747d;
@@ -457,6 +501,9 @@ header{
   font-size:18px;
 }
 
+
+/* ================= FOOTER ================= */
+
 footer{
   background:#2d2025;
   color:#fff;
@@ -464,7 +511,12 @@ footer{
   text-align:center;
 }
 
-footer strong{color:#ffb1ce}
+footer strong{
+  color:#ffb1ce;
+}
+
+
+/* ================= TOAST ================= */
 
 .toast{
   position:fixed;
@@ -486,24 +538,52 @@ footer strong{color:#ffb1ce}
   transform:translateY(0);
 }
 
+
 @media(max-width:700px){
-  .header-inner{flex-wrap:wrap}
-  .search{width:100%;order:3}
-  .hero-box{padding:30px 23px}
-  .product-detail{grid-template-columns:1fr}
-  .detail-image{width:100%;height:260px}
-  .delivery-options{grid-template-columns:1fr}
+
+  .header-inner{
+    flex-wrap:wrap;
+  }
+
+  .search{
+    width:100%;
+    order:3;
+  }
+
+  .hero-box{
+    padding:30px 23px;
+  }
+
+  .product-detail{
+    grid-template-columns:1fr;
+  }
+
+  .detail-image{
+    width:100%;
+    height:260px;
+  }
+
+  .delivery-options{
+    grid-template-columns:1fr;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+
 <header>
+
   <div class="header-inner">
-    <a class="logo" href="#">USTHB CASES</a>
+
+    <a class="logo" href="#">
+      USTHB CASES
+    </a>
 
     <div class="header-actions">
+
       <input
         id="searchInput"
         class="search"
@@ -511,18 +591,28 @@ footer strong{color:#ffb1ce}
         placeholder="Rechercher un téléphone ou un modèle..."
       >
 
-      <button id="cartBtn" class="cart-btn">
+      <button
+        id="cartBtn"
+        class="cart-btn"
+      >
         🛒 Panier
         <span id="cartCount" class="cart-count">0</span>
       </button>
+
     </div>
+
   </div>
+
 </header>
+
 
 <main>
 
+
 <section class="hero">
+
   <div class="hero-box">
+
     <h1>
       Tes cases.<br>
       <span>Ton style.</span>
@@ -533,72 +623,155 @@ footer strong{color:#ffb1ce}
       chez USTHB CASES.
       Livraison USTHB gratuite.
     </p>
+
   </div>
+
 </section>
 
+
 <div class="categories">
-  <button class="category-btn active" data-category="all">Tout</button>
-  <button class="category-btn" data-category="cases">Cases</button>
-  <button class="category-btn" data-category="accessoires">Accessoires</button>
-  <button class="category-btn" data-category="ventouses">Ventouses</button>
-  <button class="category-btn" data-category="ipad">iPad</button>
+
+  <button
+    class="category-btn active"
+    data-category="all"
+  >
+    Tout
+  </button>
+
+  <button
+    class="category-btn"
+    data-category="cases"
+  >
+    Cases
+  </button>
+
+  <button
+    class="category-btn"
+    data-category="accessoires"
+  >
+    Accessoires
+  </button>
+
+  <button
+    class="category-btn"
+    data-category="ventouses"
+  >
+    Ventouses
+  </button>
+
+  <button
+    class="category-btn"
+    data-category="ipad"
+  >
+    iPad
+  </button>
+
 </div>
 
+
 <section class="section">
-  <h2 class="section-title">Nos produits</h2>
+
+  <h2 class="section-title">
+    Nos produits
+  </h2>
 
   <p class="section-subtitle">
     Disponible actuellement
   </p>
 
-  <div id="products" class="products">
-    <div style="grid-column:1/-1;text-align:center;padding:40px">
+  <div
+    id="products"
+    class="products"
+  >
+
+    <div class="empty">
       Chargement des produits...
     </div>
+
   </div>
+
 </section>
 
 </main>
 
+
 <footer>
+
   <strong>USTHB CASES</strong>
+
   <br><br>
+
   Made with love in Algeria 🇩🇿
+
 </footer>
 
 
 <!-- PRODUCT MODAL -->
 
-<div id="productModal" class="modal">
+<div
+  id="productModal"
+  class="modal"
+>
 
   <div class="modal-card">
 
     <div class="modal-head">
-      <div class="modal-title">Produit</div>
 
-      <button class="close" onclick="closeProductModal()">
+      <div class="modal-title">
+        Produit
+      </div>
+
+      <button
+        class="close"
+        onclick="closeProductModal()"
+      >
         ×
       </button>
+
     </div>
+
 
     <div class="product-detail">
 
-      <div id="detailImage" class="detail-image"></div>
+      <div
+        id="detailImage"
+        class="detail-image"
+      ></div>
+
 
       <div>
 
-        <div id="detailName" class="detail-name"></div>
+        <div
+          id="detailName"
+          class="detail-name"
+        ></div>
 
-        <div id="detailPrice" class="detail-price"></div>
+        <div
+          id="detailPrice"
+          class="detail-price"
+        ></div>
 
-        <div id="detailModels" class="detail-models"></div>
+        <div
+          id="detailModels"
+          class="detail-models"
+        ></div>
+
 
         <div class="field">
-          <label>Modèle</label>
+
+          <label>
+            Modèle
+          </label>
+
           <select id="modelSelect"></select>
+
         </div>
 
-        <button id="addToCartBtn" class="primary-btn">
+
+        <button
+          id="addToCartBtn"
+          class="primary-btn"
+        >
           Ajouter au panier
         </button>
 
@@ -607,12 +780,16 @@ footer strong{color:#ffb1ce}
     </div>
 
   </div>
+
 </div>
 
 
 <!-- CART MODAL -->
 
-<div id="cartModal" class="modal">
+<div
+  id="cartModal"
+  class="modal"
+>
 
   <div class="modal-card">
 
@@ -622,49 +799,90 @@ footer strong{color:#ffb1ce}
         Ton panier
       </div>
 
-      <button class="close" onclick="closeCart()">
+      <button
+        class="close"
+        onclick="closeCart()"
+      >
         ×
       </button>
 
     </div>
 
+
     <div id="cartItems"></div>
+
 
     <div
       id="cartEmpty"
       class="hidden"
-      style="text-align:center;padding:30px;color:#8d7680"
+      style="
+        text-align:center;
+        padding:30px;
+        color:#8d7680;
+      "
     >
       Ton panier est vide.
     </div>
 
+
     <div id="checkoutArea">
 
       <div class="field">
-        <label>Nom</label>
-        <input id="lastName" placeholder="Nom">
+
+        <label>
+          Nom
+        </label>
+
+        <input
+          id="lastName"
+          placeholder="Nom"
+        >
+
       </div>
 
-      <div class="field">
-        <label>Prénom</label>
-        <input id="firstName" placeholder="Prénom">
-      </div>
 
       <div class="field">
-        <label>Téléphone</label>
+
+        <label>
+          Prénom
+        </label>
+
+        <input
+          id="firstName"
+          placeholder="Prénom"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Téléphone
+        </label>
+
         <input
           id="phone"
           inputmode="numeric"
           maxlength="10"
           placeholder="0550123456"
         >
+
       </div>
 
+
       <div class="field">
-        <label>Wilaya</label>
+
+        <label>
+          Wilaya
+        </label>
 
         <select id="wilaya">
-          <option value="">Choisir une wilaya</option>
+
+          <option value="">
+            Choisir une wilaya
+          </option>
+
           <option>Adrar</option>
           <option>Chlef</option>
           <option>Laghouat</option>
@@ -723,12 +941,17 @@ footer strong{color:#ffb1ce}
           <option>Djanet</option>
           <option>El M'Ghair</option>
           <option>El Meniaa</option>
+
         </select>
+
       </div>
+
 
       <div class="field">
 
-        <label>Livraison</label>
+        <label>
+          Livraison
+        </label>
 
         <div class="delivery-options">
 
@@ -746,8 +969,7 @@ footer strong{color:#ffb1ce}
             class="delivery-option"
             data-delivery="domicile"
           >
-            Domicile<br>
-            <small>500 DA</small>
+            Domicile
           </button>
 
           <button
@@ -755,52 +977,91 @@ footer strong{color:#ffb1ce}
             class="delivery-option"
             data-delivery="bureau"
           >
-            Bureau<br>
-            <small>350 DA</small>
+            Bureau
           </button>
 
         </div>
 
       </div>
 
-      <div id="addressField" class="field hidden">
-        <label>Adresse</label>
+
+      <div
+        id="addressField"
+        class="field hidden"
+      >
+
+        <label>
+          Adresse
+        </label>
 
         <textarea
           id="address"
           rows="3"
           placeholder="Votre adresse..."
         ></textarea>
+
       </div>
+
 
       <div class="total-box">
 
         <div class="total-line">
-          <span>Produits</span>
-          <strong id="productsTotal">0 DA</strong>
+
+          <span>
+            Produits
+          </span>
+
+          <strong id="productsTotal">
+            0 DA
+          </strong>
+
         </div>
+
 
         <div class="total-line">
-          <span>Livraison</span>
-          <strong id="deliveryTotal">0 DA</strong>
+
+          <span>
+            Livraison
+          </span>
+
+          <strong id="deliveryTotal">
+            0 DA
+          </strong>
+
         </div>
 
+
         <div class="total-line total-final">
-          <span>Total</span>
-          <strong id="grandTotal">0 DA</strong>
+
+          <span>
+            Total
+          </span>
+
+          <strong id="grandTotal">
+            0 DA
+          </strong>
+
         </div>
 
       </div>
 
-      <button id="orderBtn" class="primary-btn">
+
+      <button
+        id="orderBtn"
+        class="primary-btn"
+      >
         Confirmer la commande
       </button>
 
     </div>
+
   </div>
+
 </div>
 
+
 <div id="toast" class="toast"></div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -821,31 +1082,42 @@ const db =
 
 let products = [];
 let cart = [];
+
 let selectedProduct = null;
+
 let selectedCategory = "all";
+
 let selectedDelivery = "usthb";
 
 
+/* ================= HELPERS ================= */
+
 function escapeHTML(value){
+
   return String(value ?? "")
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;")
     .replaceAll('"',"&quot;")
     .replaceAll("'","&#039;");
+
 }
 
 
 function formatPrice(value){
+
   return Number(value || 0)
     .toLocaleString("fr-FR") + " DA";
+
 }
 
 
 function getCategory(product){
 
   return String(
-    product?.categorie || "Cases"
+    product?.categorie ||
+    product?.category ||
+    "Cases"
   )
   .trim()
   .toLowerCase();
@@ -855,26 +1127,32 @@ function getCategory(product){
 
 function getModels(product){
 
-  return String(product?.modele || "")
-    .split("||")
-    .map(x => x.trim())
-    .filter(Boolean);
+  return String(
+    product?.modele || ""
+  )
+  .split("||")
+  .map(x => x.trim())
+  .filter(Boolean);
 
 }
 
 
 function getImages(product){
 
-  return String(product?.image_url || "")
-    .split("||")
-    .map(x => x.trim())
-    .filter(Boolean);
+  return String(
+    product?.image_url || ""
+  )
+  .split("||")
+  .map(x => x.trim())
+  .filter(Boolean);
 
 }
 
 
 function getFirstImage(product){
+
   return getImages(product)[0] || "";
+
 }
 
 
@@ -894,16 +1172,19 @@ function showToast(message){
     document.getElementById("toast");
 
   toast.textContent = message;
+
   toast.classList.add("show");
 
   setTimeout(() => {
+
     toast.classList.remove("show");
+
   },3000);
 
 }
 
 
-/* PRODUCTS */
+/* ================= LOAD PRODUCTS ================= */
 
 async function loadProducts(){
 
@@ -911,7 +1192,7 @@ async function loadProducts(){
     document.getElementById("products");
 
   container.innerHTML = `
-    <div style="grid-column:1/-1;text-align:center;padding:40px">
+    <div class="empty">
       Chargement des produits...
     </div>
   `;
@@ -923,9 +1204,11 @@ async function loadProducts(){
       .select("*");
 
 
-  if(error){
+  console.log("PRODUCTS :",data);
+  console.log("PRODUCT ERROR :",error);
 
-    console.error("PRODUCT ERROR:",error);
+
+  if(error){
 
     container.innerHTML = `
       <div style="
@@ -953,18 +1236,22 @@ async function loadProducts(){
     : [];
 
 
-  products.sort((a,b) =>
-    String(b.created_at || "")
+  products.sort((a,b) => {
+
+    return String(b.created_at || "")
       .localeCompare(
         String(a.created_at || "")
-      )
-  );
+      );
+
+  });
 
 
   renderProducts();
 
 }
 
+
+/* ================= RENDER ================= */
 
 function renderProducts(){
 
@@ -985,24 +1272,33 @@ function renderProducts(){
       const category =
         getCategory(product);
 
+
       const categoryMatch =
         selectedCategory === "all" ||
         category === selectedCategory;
 
+
       const searchText = [
+
         product.nom,
         product.categorie,
         product.modele
+
       ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
 
+
       const searchMatch =
         !search ||
         searchText.includes(search);
 
-      return categoryMatch && searchMatch;
+
+      return (
+        categoryMatch &&
+        searchMatch
+      );
 
     });
 
@@ -1041,6 +1337,7 @@ function renderProducts(){
 
 
       return `
+
         <article class="product">
 
           <div class="product-photo">
@@ -1069,6 +1366,7 @@ function renderProducts(){
               `
             }
 
+
             ${
               sold
               ?
@@ -1079,41 +1377,66 @@ function renderProducts(){
 
           </div>
 
+
           <div class="product-info">
 
             <div class="product-name">
-              ${escapeHTML(product.nom || "Sans nom")}
+              ${escapeHTML(
+                product.nom || "Sans nom"
+              )}
             </div>
+
 
             <div class="product-price">
               ${formatPrice(product.prix)}
             </div>
 
+
             <div class="product-models">
+
               ${
                 models.length
-                ? escapeHTML(models.join(" • "))
-                : "Modèle non renseigné"
+                ?
+                escapeHTML(
+                  models.join(" • ")
+                )
+                :
+                "Modèle non renseigné"
               }
+
             </div>
+
 
             <button
               class="product-btn"
-              ${sold ? "disabled" : ""}
+              ${
+                sold
+                ? "disabled"
+                : ""
+              }
               onclick="openProduct('${String(product.id)}')"
             >
-              ${sold ? "Épuisé" : "Choisir le modèle"}
+
+              ${
+                sold
+                ? "Épuisé"
+                : "Choisir le modèle"
+              }
+
             </button>
 
           </div>
 
         </article>
+
       `;
 
     }).join("");
 
 }
 
+
+/* ================= SEARCH ================= */
 
 document
 .getElementById("searchInput")
@@ -1122,6 +1445,8 @@ document
   renderProducts
 );
 
+
+/* ================= CATEGORY ================= */
 
 document
 .querySelectorAll(".category-btn")
@@ -1132,10 +1457,10 @@ document
     function(){
 
       document
-        .querySelectorAll(".category-btn")
-        .forEach(x =>
-          x.classList.remove("active")
-        );
+      .querySelectorAll(".category-btn")
+      .forEach(x =>
+        x.classList.remove("active")
+      );
 
       this.classList.add("active");
 
@@ -1150,20 +1475,23 @@ document
 });
 
 
-/* PRODUCT */
+/* ================= PRODUCT MODAL ================= */
 
 function openProduct(id){
 
   selectedProduct =
     products.find(
       p =>
-        String(p.id) === String(id)
+        String(p.id) ===
+        String(id)
     );
 
 
   if(!selectedProduct){
 
-    showToast("Produit introuvable.");
+    showToast(
+      "Produit introuvable."
+    );
 
     return;
   }
@@ -1177,44 +1505,54 @@ function openProduct(id){
 
 
   document
-    .getElementById("detailName")
-    .textContent =
-      selectedProduct.nom || "Produit";
+  .getElementById("detailName")
+  .textContent =
+    selectedProduct.nom || "Produit";
 
 
   document
-    .getElementById("detailPrice")
-    .textContent =
-      formatPrice(selectedProduct.prix);
+  .getElementById("detailPrice")
+  .textContent =
+    formatPrice(
+      selectedProduct.prix
+    );
 
 
   document
-    .getElementById("detailModels")
-    .textContent =
-      models.length
-      ? "Modèles disponibles : " + models.join(" • ")
-      : "Modèle non renseigné";
+  .getElementById("detailModels")
+  .textContent =
+    models.length
+    ?
+    "Modèles disponibles : " +
+    models.join(" • ")
+    :
+    "Modèle non renseigné";
 
 
   document
-    .getElementById("detailImage")
-    .innerHTML =
-      image
-      ?
-      `<img src="${escapeHTML(image)}" alt="">`
-      :
-      `
-      <div style="
-        width:100%;
-        height:100%;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        color:#9c858e;
-      ">
-        Pas de photo
-      </div>
-      `;
+  .getElementById("detailImage")
+  .innerHTML =
+    image
+    ?
+    `
+    <img
+      src="${escapeHTML(image)}"
+      alt="${escapeHTML(selectedProduct.nom)}"
+    >
+    `
+    :
+    `
+    <div style="
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#9c858e;
+    ">
+      Pas de photo
+    </div>
+    `;
 
 
   const select =
@@ -1235,7 +1573,9 @@ function openProduct(id){
   }else{
 
     select.innerHTML = `
-      <option value="">Modèle non renseigné</option>
+      <option value="">
+        Modèle non renseigné
+      </option>
     `;
 
     select.disabled = true;
@@ -1244,8 +1584,8 @@ function openProduct(id){
 
 
   document
-    .getElementById("productModal")
-    .classList.add("show");
+  .getElementById("productModal")
+  .classList.add("show");
 
 }
 
@@ -1253,13 +1593,15 @@ function openProduct(id){
 function closeProductModal(){
 
   document
-    .getElementById("productModal")
-    .classList.remove("show");
+  .getElementById("productModal")
+  .classList.remove("show");
 
   selectedProduct = null;
 
 }
 
+
+/* ================= ADD CART ================= */
 
 document
 .getElementById("addToCartBtn")
@@ -1268,6 +1610,7 @@ document
   function(){
 
     if(!selectedProduct){
+
       return;
     }
 
@@ -1281,19 +1624,24 @@ document
 
     cart.push({
 
-      productId:selectedProduct.id,
+      productId:
+        selectedProduct.id,
 
-      name:selectedProduct.nom || "",
+      name:
+        selectedProduct.nom || "",
 
-      price:Number(
-        selectedProduct.prix || 0
-      ),
+      price:
+        Number(
+          selectedProduct.prix || 0
+        ),
 
-      image:getFirstImage(
-        selectedProduct
-      ),
+      image:
+        getFirstImage(
+          selectedProduct
+        ),
 
-      model:model,
+      model:
+        model,
 
       quantity:1
 
@@ -1301,7 +1649,9 @@ document
 
 
     saveCart();
+
     updateCartCount();
+
     closeProductModal();
 
     showToast(
@@ -1312,7 +1662,7 @@ document
 );
 
 
-/* CART */
+/* ================= CART ================= */
 
 function saveCart(){
 
@@ -1356,14 +1706,18 @@ function updateCartCount(){
   const count =
     cart.reduce(
       (sum,item) =>
-        sum + Number(item.quantity || 1),
+        sum +
+        Number(
+          item.quantity || 1
+        ),
       0
     );
 
+
   document
-    .getElementById("cartCount")
-    .textContent =
-      count;
+  .getElementById("cartCount")
+  .textContent =
+    count;
 
 }
 
@@ -1381,8 +1735,8 @@ function openCart(){
   renderCart();
 
   document
-    .getElementById("cartModal")
-    .classList.add("show");
+  .getElementById("cartModal")
+  .classList.add("show");
 
 }
 
@@ -1390,8 +1744,8 @@ function openCart(){
 function closeCart(){
 
   document
-    .getElementById("cartModal")
-    .classList.remove("show");
+  .getElementById("cartModal")
+  .classList.remove("show");
 
 }
 
@@ -1413,6 +1767,7 @@ function renderCart(){
     itemsBox.innerHTML = "";
 
     empty.classList.remove("hidden");
+
     checkout.classList.add("hidden");
 
     updateTotals();
@@ -1422,56 +1777,65 @@ function renderCart(){
 
 
   empty.classList.add("hidden");
+
   checkout.classList.remove("hidden");
 
 
   itemsBox.innerHTML =
-    cart.map((item,index) => `
+    cart.map((item,index) => {
 
-      <div class="cart-item">
+      return `
 
-        <div class="cart-item-image">
+        <div class="cart-item">
 
-          ${
-            item.image
-            ?
-            `<img
-              src="${escapeHTML(item.image)}"
-              alt="${escapeHTML(item.name)}"
-            >`
-            :
-            ""
-          }
+          <div class="cart-item-image">
+
+            ${
+              item.image
+              ?
+              `
+              <img
+                src="${escapeHTML(item.image)}"
+                alt="${escapeHTML(item.name)}"
+              >
+              `
+              :
+              ""
+            }
+
+          </div>
+
+
+          <div class="cart-item-info">
+
+            <div class="cart-item-name">
+              ${escapeHTML(item.name)}
+            </div>
+
+            <div class="cart-item-model">
+              Modèle :
+              ${escapeHTML(item.model || "—")}
+            </div>
+
+            <div class="cart-item-price">
+              ${formatPrice(item.price)}
+            </div>
+
+          </div>
+
+
+          <button
+            class="remove-cart"
+            onclick="removeCartItem(${index})"
+          >
+            Supprimer
+          </button>
 
         </div>
 
-        <div class="cart-item-info">
+      `;
 
-          <div class="cart-item-name">
-            ${escapeHTML(item.name)}
-          </div>
-
-          <div class="cart-item-model">
-            Modèle :
-            ${escapeHTML(item.model || "—")}
-          </div>
-
-          <div class="cart-item-price">
-            ${formatPrice(item.price)}
-          </div>
-
-        </div>
-
-        <button
-          class="remove-cart"
-          onclick="removeCartItem(${index})"
-        >
-          Supprimer
-        </button>
-
-      </div>
-
-    `).join("");
+    }).join("");
 
 
   updateTotals();
@@ -1484,7 +1848,9 @@ function removeCartItem(index){
   cart.splice(index,1);
 
   saveCart();
+
   updateCartCount();
+
   renderCart();
 
 }
@@ -1509,6 +1875,11 @@ function getDeliveryPrice(){
     return 0;
   }
 
+  /*
+    Prix par défaut.
+    Tu peux les modifier ici.
+  */
+
   if(selectedDelivery === "domicile"){
     return 500;
   }
@@ -1531,21 +1902,21 @@ function updateTotals(){
     getDeliveryPrice();
 
   document
-    .getElementById("productsTotal")
-    .textContent =
-      formatPrice(productsTotal);
+  .getElementById("productsTotal")
+  .textContent =
+    formatPrice(productsTotal);
 
   document
-    .getElementById("deliveryTotal")
-    .textContent =
-      formatPrice(delivery);
+  .getElementById("deliveryTotal")
+  .textContent =
+    formatPrice(delivery);
 
   document
-    .getElementById("grandTotal")
-    .textContent =
-      formatPrice(
-        productsTotal + delivery
-      );
+  .getElementById("grandTotal")
+  .textContent =
+    formatPrice(
+      productsTotal + delivery
+    );
 
 }
 
@@ -1559,10 +1930,10 @@ document
     function(){
 
       document
-        .querySelectorAll(".delivery-option")
-        .forEach(x =>
-          x.classList.remove("active")
-        );
+      .querySelectorAll(".delivery-option")
+      .forEach(x =>
+        x.classList.remove("active")
+      );
 
       this.classList.add("active");
 
@@ -1570,12 +1941,25 @@ document
         this.dataset.delivery;
 
 
-      document
-        .getElementById("addressField")
-        .classList.toggle(
-          "hidden",
-          selectedDelivery === "usthb"
+      const addressField =
+        document.getElementById(
+          "addressField"
         );
+
+
+      if(selectedDelivery === "usthb"){
+
+        addressField
+          .classList
+          .add("hidden");
+
+      }else{
+
+        addressField
+          .classList
+          .remove("hidden");
+
+      }
 
 
       updateTotals();
@@ -1586,7 +1970,7 @@ document
 });
 
 
-/* ORDER */
+/* ================= ORDER ================= */
 
 document
 .getElementById("orderBtn")
@@ -1600,7 +1984,9 @@ async function submitOrder(){
 
   if(!cart.length){
 
-    showToast("Ton panier est vide.");
+    showToast(
+      "Ton panier est vide."
+    );
 
     return;
   }
@@ -1612,11 +1998,13 @@ async function submitOrder(){
       .value
       .trim();
 
+
   const firstName =
     document
       .getElementById("firstName")
       .value
       .trim();
+
 
   const phone =
     document
@@ -1624,11 +2012,13 @@ async function submitOrder(){
       .value
       .trim();
 
+
   const wilaya =
     document
       .getElementById("wilaya")
       .value
       .trim();
+
 
   const address =
     document
@@ -1659,7 +2049,9 @@ async function submitOrder(){
 
   if(!wilaya){
 
-    showToast("Choisis ta wilaya.");
+    showToast(
+      "Choisis ta wilaya."
+    );
 
     return;
   }
@@ -1670,7 +2062,9 @@ async function submitOrder(){
     !address
   ){
 
-    showToast("Entre ton adresse.");
+    showToast(
+      "Entre ton adresse."
+    );
 
     return;
   }
@@ -1679,11 +2073,14 @@ async function submitOrder(){
   const deliveryPrice =
     getDeliveryPrice();
 
+
   const productsTotal =
     getProductsTotal();
 
+
   const total =
-    productsTotal + deliveryPrice;
+    productsTotal +
+    deliveryPrice;
 
 
   const panierId =
@@ -1698,16 +2095,10 @@ async function submitOrder(){
 
   /*
     IMPORTANT :
-
-    On garde uniquement les colonnes
-    que ton système utilise déjà.
-
-    coque_id = produit exact
-    modele = modèle choisi
-    panier_id = groupe de commande
-    quantite = quantité
+    Chaque article est une ligne.
+    coque_id permet à l'admin de retrouver
+    exactement le produit commandé.
   */
-
 
   const rows =
     cart.map(item => ({
@@ -1750,18 +2141,17 @@ async function submitOrder(){
         panierId,
 
       quantite:
-        Number(item.quantity || 1)
+        Number(
+          item.quantity || 1
+        )
 
     }));
 
 
-  console.log("ORDER:",{
-    panierId,
-    productsTotal,
-    deliveryPrice,
-    total,
+  console.log(
+    "ORDER ROWS :",
     rows
-  });
+  );
 
 
   const {
@@ -1777,7 +2167,7 @@ async function submitOrder(){
   if(error){
 
     console.error(
-      "ERREUR COMMANDE:",
+      "ERREUR COMMANDE :",
       error
     );
 
@@ -1791,7 +2181,7 @@ async function submitOrder(){
 
 
   console.log(
-    "COMMANDE ENREGISTRÉE:",
+    "COMMANDE ENREGISTRÉE :",
     data
   );
 
@@ -1799,14 +2189,28 @@ async function submitOrder(){
   cart = [];
 
   saveCart();
+
   updateCartCount();
 
+  document
+    .getElementById("lastName")
+    .value = "";
 
-  document.getElementById("lastName").value = "";
-  document.getElementById("firstName").value = "";
-  document.getElementById("phone").value = "";
-  document.getElementById("wilaya").value = "";
-  document.getElementById("address").value = "";
+  document
+    .getElementById("firstName")
+    .value = "";
+
+  document
+    .getElementById("phone")
+    .value = "";
+
+  document
+    .getElementById("wilaya")
+    .value = "";
+
+  document
+    .getElementById("address")
+    .value = "";
 
 
   closeCart();
@@ -1819,10 +2223,12 @@ async function submitOrder(){
 }
 
 
-/* INIT */
+/* ================= INIT ================= */
 
 loadCart();
+
 updateCartCount();
+
 loadProducts();
 
 </script>
